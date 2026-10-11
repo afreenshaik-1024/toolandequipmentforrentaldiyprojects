@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolNest | Tool & Equipment Rental</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+
+<header class="site-header">
+    <nav class="navbar container">
+
+        <a href="#" class="logo">
+            <img src="images/logo.png"
+                 alt="ToolNest Logo"
+                 class="logo-image">
+
+            <div>
+                <div class="brand-name">Tool<span>Nest</span></div>
+                <div class="tagline">Rent Tools • Build Dreams</div>
+            </div>
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+
+                <li class="nav-item dropdown">
+                    <button class="dropdown-toggle"
+                            id="homeDropdown"
+                            aria-expanded="false"
+                            type="button">
+                        Home <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                    <ul class="dropdown-menu" id="homeDropdownMenu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="about.html">About Us</a></li>
+                <li class="nav-item"><a href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a href="catalogue.html">Catalogue</a></li>
+                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+        </div>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn" id="rtlToggle"
+                    title="Toggle RTL" aria-label="Toggle RTL">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+
+            <button class="icon-btn" id="themeToggle"
+                    title="Toggle theme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+
+            <a href="login.html" class="login-btn">
+                <span>Login</span>
+            </a>
+
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+
+
+
+<!-- Contact Hero Section -->
+<section class="contact-hero">
+  <div class="contact-hero-overlay"></div>
+
+  <div class="contact-hero-container">
+    <span class="contact-hero-label">WE'RE HERE TO HELP</span>
+
+    <h1>Get in Touch With Us</h1>
+
+    <p>
+      Have questions about our products or services?
+      Our team is here to help.
+    </p>
+
+    <div class="contact-hero-actions">
+      <a href="#contact-form" class="contact-hero-btn contact-btn-primary">
+        Send an Enquiry
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+
+      <a href="catalogue.html" class="contact-hero-btn contact-btn-outline">
+        Explore Catalogue
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="contact-info-section" id="contact-information">
+  <div class="contact-info-container">
+
+    <div class="contact-info-heading">
+      <span class="contact-info-label">CONTACT INFORMATION</span>
+      <h2>We're Here to Help</h2>
+      <p>
+        Have questions or need assistance? Reach out to our team
+        using any of the options below.
+      </p>
+    </div>
+
+    <div class="contact-info-grid">
+
+      <!-- Phone Card -->
+      <div class="contact-info-card">
+        <div class="contact-info-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+            19.79 19.79 0 0 1-8.63-3.07
+            19.5 19.5 0 0 1-6-6
+            A19.79 19.79 0 0 1 2.12 4.18
+            2 2 0 0 1 4.11 2h3
+            a2 2 0 0 1 2 1.72
+            c.12.96.36 1.9.7 2.8
+            a2 2 0 0 1-.45 2.11L8.09 9.91
+            a16 16 0 0 0 6 6l1.27-1.27
+            a2 2 0 0 1 2.11-.45
+            c.9.34 1.84.58 2.8.7
+            A2 2 0 0 1 22 16.92Z"/>
+          </svg>
+        </div>
+
+        <h3>Phone</h3>
+        <p>Call our team for quick assistance.</p>
+
+        <a href="tel:+910000000000" class="contact-info-link">
+          +91 5412478954
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Email Card -->
+      <div class="contact-info-card">
+        <div class="contact-info-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+        </div>
+
+        <h3>Email</h3>
+        <p>Send us an email with your questions.</p>
+
+        <a href="mailto:yourcompany@example.com"
+           class="contact-info-link">
+          yourcompany@example.com
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Address Card -->
+      <div class="contact-info-card">
+        <div class="contact-info-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 10c0 5-8 12-8 12S4 15 4 10
+            a8 8 0 1 1 16 0Z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+          </svg>
+        </div>
+
+        <h3>Address</h3>
+        <p>Visit our office to speak with our team.</p>
+
+        <a href="https://www.google.com/maps"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-info-link">
+          Add your office address
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Working Hours Card -->
+      <div class="contact-info-card">
+        <div class="contact-info-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 2"/>
+          </svg>
+        </div>
+
+        <h3>Working Hours</h3>
+        <p>We're available during the following hours.</p>
+
+        <div class="contact-info-hours">
+          <strong>Monday – Saturday</strong>
+          <span>9:00 AM – 6:00 PM</span>
+        </div>
+
+        <div class="contact-info-closed">
+          Sunday: Closed
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Form Section -->
+<section class="enquiry-section" id="contact-form">
+  <div class="enquiry-container">
+
+    <div class="enquiry-heading">
+      <span class="enquiry-label">GET IN TOUCH</span>
+      <h2>Send Us an Enquiry</h2>
+      <p>
+        Tell us what you need. Our team will get in touch
+        to help you find the right tools and equipment.
+      </p>
+    </div>
+
+    <form class="enquiry-form" id="enquiryForm">
+
+      <div class="enquiry-fields">
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name <span>*</span></label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <!-- Company Name -->
+        <div class="form-group">
+          <label for="companyName">
+            Company Name <small>(Optional)</small>
+          </label>
+          <input
+            type="text"
+            id="companyName"
+            name="companyName"
+            placeholder="Enter your company name"
+            autocomplete="organization"
+          >
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email Address <span>*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Phone Number <span>*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            autocomplete="tel"
+            required
+          >
+        </div>
+
+        <!-- Enquiry Type -->
+        <div class="form-group">
+          <label for="enquiryType">Enquiry Type <span>*</span></label>
+          <select id="enquiryType" name="enquiryType" required>
+            <option value="" disabled selected>
+              Select enquiry type
+            </option>
+            <option value="product-enquiry">Product Enquiry</option>
+            <option value="rental-enquiry">Rental Enquiry</option>
+            <option value="pricing">Pricing & Quotations</option>
+            <option value="availability">Product Availability</option>
+            <option value="technical-support">Technical Support</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- Subject -->
+        <div class="form-group">
+          <label for="subject">Subject <span>*</span></label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Enter enquiry subject"
+            required
+          >
+        </div>
+
+        <!-- Message -->
+        <div class="form-group form-group-full">
+          <label for="message">Message <span>*</span></label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Tell us about the products or equipment you need..."
+            required
+          ></textarea>
+        </div>
+
+      </div>
+
+      <div class="enquiry-submit-area">
+        <p class="form-note">
+          <span>*</span> Required fields
+        </p>
+
+        <button type="submit" class="enquiry-submit-btn">
+          Submit Enquiry
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+
+        <p class="form-status" id="formStatus" role="status"
+           aria-live="polite"></p>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- Our Location Section -->
+<section class="location-section" id="our-location">
+  <div class="location-container">
+
+    <div class="location-heading">
+      <span class="location-label">FIND US</span>
+      <h2>Our Location</h2>
+      <p>
+        Visit our office to discuss your equipment rental needs.
+        We're happy to help you find the right solution.
+      </p>
+    </div>
+
+    <div class="location-content">
+
+      <!-- Company Address -->
+      <div class="location-details">
+        <div class="location-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 10c0 5-8 12-8 12S4 15 4 10
+            a8 8 0 1 1 16 0Z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+          </svg>
+        </div>
+
+        <h3>Visit Our Office</h3>
+
+        <p class="location-description">
+          We're here to help with product enquiries,
+          equipment rentals and quotations.
+        </p>
+
+        <div class="location-address">
+          <strong>ToolRent Office</strong>
+          <p>
+            [Building / Street Name]<br>
+            [Area / Locality]<br>
+            [City, State, PIN Code]<br>
+            India
+          </p>
+        </div>
+
+        <!-- Optional nearby landmarks -->
+        <div class="location-landmarks">
+          <h4>Nearby Landmarks</h4>
+          <p>[Add a nearby landmark]</p>
+        </div>
+
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=YOUR_OFFICE_ADDRESS"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="directions-btn"
+        >
+          Get Directions
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Google Maps Embed -->
+      <div class="location-map">
+        <iframe
+          src="https://maps.google.com/maps?q=Hyderabad%2C%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          title="Map showing the office location"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact FAQs Section -->
+<section class="contact-faq-section" id="contact-faqs">
+  <div class="contact-faq-container">
+
+    <div class="contact-faq-heading">
+      <span class="contact-faq-label">NEED HELP?</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>
+        Find answers to common questions about quotations,
+        products, orders and technical support.
+      </p>
+    </div>
+
+    <div class="contact-faq-list">
+
+      <!-- FAQ 1 -->
+      <details class="contact-faq-item">
+        <summary>
+          <span>How can I request a quotation?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="contact-faq-answer">
+          <p>
+            Fill out our contact form with your requirements,
+            select the appropriate enquiry type and submit it.
+            Include the products, quantities and rental duration
+            you need so our team can prepare a suitable quotation.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="contact-faq-item">
+        <summary>
+          <span>How long does it take to receive a response?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="contact-faq-answer">
+          <p>
+            Our team will review your enquiry and respond as soon
+            as possible during business hours. Response times may
+            vary depending on the complexity of your request.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="contact-faq-item">
+        <summary>
+          <span>Can I enquire about bulk orders?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="contact-faq-answer">
+          <p>
+            Yes, you can contact our team for bulk requirements.
+            Please mention the products, quantities, project
+            details and expected rental period so we can understand
+            your needs.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details class="contact-faq-item">
+        <summary>
+          <span>Where can I find product specifications?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="contact-faq-answer">
+          <p>
+            Visit our product catalogue to explore available
+            equipment and its specifications. If you need additional
+            technical details, contact our team with the product
+            name or model.
+          </p>
+        </div>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details class="contact-faq-item">
+        <summary>
+          <span>How can I get technical support?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="contact-faq-answer">
+          <p>
+            Submit an enquiry through our contact form and select
+            "Technical Support" as the enquiry type. Include the
+            equipment name, model and a description of the issue
+            to help our team assist you.
+          </p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="contact-faq-footer">
+      <p>Still have questions?</p>
+      <a href="contact.html" class="contact-faq-contact-btn">
+        Contact Our Team
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta-section">
+  <div class="final-cta-overlay"></div>
+
+  <div class="final-cta-container">
+    <span class="final-cta-label">LET'S WORK TOGETHER</span>
+
+    <h2>Let’s Discuss Your Requirements</h2>
+
+    <p>
+      Our team is ready to help you find the right products
+      and solutions.
+    </p>
+
+    <div class="final-cta-buttons">
+      <a href="tel:+910000000000"
+         class="final-cta-btn final-cta-call">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+          19.79 19.79 0 0 1-8.63-3.07
+          19.5 19.5 0 0 1-6-6
+          A19.79 19.79 0 0 1 2.12 4.18
+          2 2 0 0 1 4.11 2h3
+          a2 2 0 0 1 2 1.72
+          c.12.96.36 1.9.7 2.8
+          a2 2 0 0 1-.45 2.11L8.09 9.91
+          a16 16 0 0 0 6 6l1.27-1.27
+          a2 2 0 0 1 2.11-.45
+          c.9.34 1.84.58 2.8.7
+          A2 2 0 0 1 22 16.92Z"/>
+        </svg>
+        Call Us Now
+      </a>
+
+      <a href="catalogue.html"
+         class="final-cta-btn final-cta-catalogue">
+        View Catalogue
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="images/logo.png"
+                         alt="ToolNest Logo"
+                         class="logo-image">
+
+                    <div>
+                        <div class="brand-name">Tool<span>Nest</span></div>
+                        <div class="tagline">Rent Tools • Build Dreams</div>
+                    </div>
+                </a>
+
+                <p>
+                    Your one-stop platform for renting quality tools
+                    and equipment for DIY projects, home improvements,
+                    and professional work.
+                </p>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Rental Guide</a></li>
+                    <li><a href="#">Popular Tools</a></li>
+                    <li><a href="#">Power Tools</a></li>
+                    <li><a href="#">My Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Contact Us</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>123 Tool Street, Your City, India</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>hello@toolnest.com</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ToolNest. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

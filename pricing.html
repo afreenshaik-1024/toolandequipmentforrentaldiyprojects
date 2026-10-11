@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolNest | Tool & Equipment Rental</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="pricing.css">
+
+
+</head>
+
+<body>
+
+<header class="site-header">
+    <nav class="navbar container">
+
+        <a href="#" class="logo">
+            <img src="images/logo.png"
+                 alt="ToolNest Logo"
+                 class="logo-image">
+
+            <div>
+                <div class="brand-name">Tool<span>Nest</span></div>
+                <div class="tagline">Rent Tools • Build Dreams</div>
+            </div>
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+
+                <li class="nav-item dropdown">
+                    <button class="dropdown-toggle"
+                            id="homeDropdown"
+                            aria-expanded="false"
+                            type="button">
+                        Home <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                    <ul class="dropdown-menu" id="homeDropdownMenu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="about.html">About Us</a></li>
+                <li class="nav-item"><a href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a href="catalogue.html">Catalogue</a></li>
+                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+        </div>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn" id="rtlToggle"
+                    title="Toggle RTL" aria-label="Toggle RTL">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+
+            <button class="icon-btn" id="themeToggle"
+                    title="Toggle theme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+
+            <a href="login.html" class="login-btn">
+                <span>Login</span>
+            </a>
+
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+
+
+<section class="pricing-hero">
+  <div class="pricing-overlay"></div>
+
+  <div class="pricing-content">
+    <span class="pricing-tagline">
+      SIMPLE &amp; TRANSPARENT PRICING
+    </span>
+<h1>
+  Choose the Right Plan
+  <span>for Your Needs</span>
+</h1>
+
+    <p>
+      Find the right tools for every project with flexible rental
+      plans, reliable service, and transparent pricing. Get what
+      you need without the cost of buying.
+    </p>
+
+    <div class="pricing-buttons">
+      <a href="#pricing-plans" class="pricing-btn primary-btn">
+        View Plans
+      </a>
+
+      <a href="contact.html" class="pricing-btn secondary-btn">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-plans" id="pricing-plans">
+  <div class="plans-container">
+
+    <div class="plans-header">
+      <span class="plans-tagline">OUR PRICING PLANS</span>
+      <h2>Choose Your <span>Perfect Plan</span></h2>
+      <p>
+        Flexible tool rental plans designed for every project,
+        from simple home repairs to large business operations.
+      </p>
+    </div>
+
+    <div class="plans-grid">
+
+      <!-- Basic Plan -->
+      <div class="plan-card">
+        <div class="plan-top">
+          <span class="plan-label">BASIC</span>
+          <h3>Basic Plan</h3>
+          <p class="plan-description">
+            Perfect for beginners and small projects.
+          </p>
+
+          <div class="plan-price">
+            <span class="currency">₹</span>
+            <span class="amount">499</span>
+            <span class="period">/ day</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="choose-plan">Choose Plan</a>
+
+        <div class="plan-divider"></div>
+
+        <h4>What's Included</h4>
+        <ul class="plan-features">
+          <li><span>✓</span> Access to basic tools</li>
+          <li><span>✓</span> Ideal for DIY projects</li>
+          <li><span>✓</span> Flexible daily rental</li>
+          <li><span>✓</span> Standard customer support</li>
+          <li><span>✓</span> Easy booking process</li>
+        </ul>
+      </div>
+
+      <!-- Professional Plan -->
+      <div class="plan-card featured-plan">
+        <div class="popular-badge">MOST POPULAR</div>
+
+        <div class="plan-top">
+          <span class="plan-label">PROFESSIONAL</span>
+          <h3>Pro Plan</h3>
+          <p class="plan-description">
+            Built for regular users and workshops.
+          </p>
+
+          <div class="plan-price">
+            <span class="currency">₹</span>
+            <span class="amount">1,499</span>
+            <span class="period">/ day</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="choose-plan featured-button">
+          Choose Plan
+        </a>
+
+        <div class="plan-divider"></div>
+
+        <h4>What's Included</h4>
+        <ul class="plan-features">
+          <li><span>✓</span> Access to professional tools</li>
+          <li><span>✓</span> Ideal for workshops</li>
+          <li><span>✓</span> Priority booking</li>
+          <li><span>✓</span> Dedicated customer support</li>
+          <li><span>✓</span> Flexible rental durations</li>
+        </ul>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="plan-card">
+        <div class="plan-top">
+          <span class="plan-label">ENTERPRISE</span>
+          <h3>Enterprise Plan</h3>
+          <p class="plan-description">
+            Designed for businesses and large teams.
+          </p>
+
+          <div class="plan-price">
+            <span class="currency">₹</span>
+            <span class="amount">4,999</span>
+            <span class="period">/ day</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="choose-plan">Choose Plan</a>
+
+        <div class="plan-divider"></div>
+
+        <h4>What's Included</h4>
+        <ul class="plan-features">
+          <li><span>✓</span> Access to heavy-duty tools</li>
+          <li><span>✓</span> Ideal for large projects</li>
+          <li><span>✓</span> Team rental management</li>
+          <li><span>✓</span> Priority support</li>
+          <li><span>✓</span> Custom rental solutions</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="comparison-section" id="plan-comparison">
+  <div class="comparison-container">
+
+    <!-- Section Heading -->
+    <div class="comparison-header">
+      <span class="comparison-tagline">COMPARE OUR PLANS</span>
+
+      <h2>Find the Right Plan <span>for You</span></h2>
+
+      <p>
+        Compare features and benefits to choose the perfect
+        tool rental plan for your needs.
+      </p>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="comparison-table-wrapper">
+      <table class="comparison-table">
+
+        <thead>
+          <tr>
+            <th class="feature-heading">Features</th>
+            <th>Basic</th>
+            <th class="professional-heading">
+              Professional
+              <span class="table-popular">POPULAR</span>
+            </th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="feature-name">Available Tools</td>
+            <td>Basic hand tools</td>
+            <td>Professional tools</td>
+            <td>Full tool collection</td>
+          </tr>
+
+          <tr>
+            <td class="feature-name">Access Duration</td>
+            <td>Daily</td>
+            <td>Daily / Weekly</td>
+            <td>Flexible scheduling</td>
+          </tr>
+
+          <tr>
+            <td class="feature-name">Support Availability</td>
+            <td>Standard support</td>
+            <td>Priority support</td>
+            <td>Dedicated support</td>
+          </tr>
+
+          <tr>
+            <td class="feature-name">Usage Limits</td>
+            <td>Limited selection</td>
+            <td>Extended selection</td>
+            <td>Custom allocation</td>
+          </tr>
+
+          <tr>
+            <td class="feature-name">Additional Services</td>
+            <td>
+              <span class="compare-no">—</span>
+            </td>
+            <td>
+              <span class="compare-yes">✓</span>
+              Tool guidance
+            </td>
+            <td>
+              <span class="compare-yes">✓</span>
+              Delivery &amp; team solutions
+            </td>
+          </tr>
+
+          <tr class="comparison-price-row">
+            <td class="feature-name">Starting Price</td>
+            <td>₹499 / day</td>
+            <td>₹1,499 / day</td>
+            <td>₹4,999 / day</td>
+          </tr>
+
+          <tr class="comparison-action-row">
+            <td></td>
+            <td>
+              <a href="#pricing-plans" class="compare-btn">
+                Choose Plan
+              </a>
+            </td>
+            <td>
+              <a href="#pricing-plans" class="compare-btn compare-btn-featured">
+                Choose Plan
+              </a>
+            </td>
+            <td>
+              <a href="#pricing-plans" class="compare-btn">
+                Choose Plan
+              </a>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    <p class="comparison-note">
+      * Features and pricing can be customized based on your rental requirements.
+    </p>
+
+  </div>
+</section>
+
+<section class="pricing-faq" id="pricing-faq">
+  <div class="faq-container">
+
+    <div class="faq-header">
+      <span class="faq-tagline">GOT QUESTIONS?</span>
+
+      <h2>Pricing <span>FAQs</span></h2>
+
+      <p>
+        Everything you need to know about our rental plans,
+        pricing, and services.
+      </p>
+    </div>
+
+    <div class="faq-list">
+
+      <details class="faq-item" open>
+        <summary>
+          <span>Which plan is right for me?</span>
+          <span class="faq-icon"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            The Basic plan is ideal for beginners and small DIY
+            projects. Professional is suitable for regular users
+            and workshops, while Enterprise is designed for
+            businesses and large teams requiring more tools
+            and flexible services.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Can I upgrade my plan?</span>
+          <span class="faq-icon"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            Yes! You can request an upgrade whenever your project
+            requires additional tools or services. Contact our
+            team to check availability and any applicable price
+            differences.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Are there any hidden charges?</span>
+          <span class="faq-icon"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            We aim to keep our pricing transparent. Any applicable
+            delivery fees, refundable deposits, late-return fees,
+            or damage charges should be communicated before
+            confirming your rental.
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Do you offer custom pricing?</span>
+          <span class="faq-icon"></span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            Yes, custom quotes can be requested for businesses,
+            large teams, bulk tool rentals, and long-term projects.
+            Contact us with your requirements to discuss a suitable
+            rental solution.
+          </p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="faq-contact">
+      <p>Still have questions?</p>
+      <a href="contact.html" class="faq-contact-btn">
+        Contact Our Team
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="final-cta" id="final-cta">
+  <div class="final-cta-overlay"></div>
+
+  <div class="final-cta-content">
+    <span class="final-cta-tagline">LET'S GET STARTED</span>
+
+    <h2>
+      Ready to Find Your
+      <span>Perfect Plan?</span>
+    </h2>
+
+    <p>
+      Explore our plans and choose the right solution
+      for your tools, projects, and budget.
+    </p>
+
+    <div class="final-cta-buttons">
+      <a href="#pricing-plans" class="final-cta-btn cta-primary">
+        Explore Plans
+      </a>
+
+      <a href="contact.html" class="final-cta-btn cta-secondary">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="images/logo.png"
+                         alt="ToolNest Logo"
+                         class="logo-image">
+
+                    <div>
+                        <div class="brand-name">Tool<span>Nest</span></div>
+                        <div class="tagline">Rent Tools • Build Dreams</div>
+                    </div>
+                </a>
+
+                <p>
+                    Your one-stop platform for renting quality tools
+                    and equipment for DIY projects, home improvements,
+                    and professional work.
+                </p>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Rental Guide</a></li>
+                    <li><a href="#">Popular Tools</a></li>
+                    <li><a href="#">Power Tools</a></li>
+                    <li><a href="#">My Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Contact Us</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>123 Tool Street, Your City, India</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>hello@toolnest.com</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ToolNest. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

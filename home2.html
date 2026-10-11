@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolNest | Tool & Equipment Rental</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="home2.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <nav class="navbar container">
+
+        <a href="#" class="logo">
+            <img src="images/logo.png"
+                 alt="ToolNest Logo"
+                 class="logo-image">
+
+            <div>
+                <div class="brand-name">Tool<span>Nest</span></div>
+                <div class="tagline">Rent Tools • Build Dreams</div>
+            </div>
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+
+                <li class="nav-item dropdown">
+                    <button class="dropdown-toggle"
+                            id="homeDropdown"
+                            aria-expanded="false"
+                            type="button">
+                        Home <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                    <ul class="dropdown-menu" id="homeDropdownMenu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="about.html">About Us</a></li>
+                <li class="nav-item"><a href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a href="catalogue.html">Catalogue</a></li>
+                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+        </div>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn" id="rtlToggle"
+                    title="Toggle RTL" aria-label="Toggle RTL">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+
+            <button class="icon-btn" id="themeToggle"
+                    title="Toggle theme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+
+            <a href="login.html" class="login-btn">
+                <span>Login</span>
+            </a>
+
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">YOUR TRUSTED TOOL RENTAL STORE</p>
+
+    <h1>
+      Tools for <span>Every Project</span>
+    </h1>
+
+    <p class="hero-desc">
+      Discover quality tools and reliable equipment
+      for every project. Rent smart and get the job done.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#products" class="btn-primary">Shop Now →</a>
+      <a href="#categories" class="btn-secondary">Explore Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP BY CATEGORIES -->
+<section class="shop-categories" id="categories">
+    <div class="categories-container">
+
+        <div class="categories-heading">
+            <span class="categories-tag">EXPLORE OUR COLLECTION</span>
+            <h2>Shop by <span>Categories</span></h2>
+            <p>
+                Find the right tools for every project, from DIY
+                improvements to professional construction.
+            </p>
+        </div>
+
+        <div class="categories-grid">
+
+            <!-- Power Tools -->
+            <article class="category-card">
+                <div class="category-image">
+                    <img
+                        src="images/image2.avif"
+                        alt="Power tools for DIY and construction"
+                        loading="lazy"
+                    >
+                    <span class="category-count">01</span>
+                </div>
+                <div class="category-info">
+                    <h3>Power Tools</h3>
+                    <p>Drills, grinders, saws and more.</p>
+                    <a href="products.html?category=power-tools">
+                        Explore Category <span>↗</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Hand Tools -->
+            <article class="category-card">
+                <div class="category-image">
+                    <img
+                        src="images/handtools.jpg"
+                        alt="Hand tools for home improvement"
+                        loading="lazy"
+                    >
+                    <span class="category-count">02</span>
+                </div>
+                <div class="category-info">
+                    <h3>Hand Tools</h3>
+                    <p>Hammers, wrenches and tool kits.</p>
+                    <a href="products.html?category=hand-tools">
+                        Explore Category <span>↗</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Construction Equipment -->
+            <article class="category-card">
+                <div class="category-image">
+                    <img
+                        src="images/image4.avif"
+                        alt="Construction equipment at a worksite"
+                        loading="lazy"
+                    >
+                    <span class="category-count">03</span>
+                </div>
+                <div class="category-info">
+                    <h3>Construction Equipment</h3>
+                    <p>Reliable equipment for bigger jobs.</p>
+                    <a href="products.html?category=construction">
+                        Explore Category <span>↗</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Garden Tools -->
+            <article class="category-card">
+                <div class="category-image">
+                    <img
+                        src="images/image5.avif"
+                        alt="Gardening tools and garden plants"
+                        loading="lazy"
+                    >
+                    <span class="category-count">04</span>
+                </div>
+                <div class="category-info">
+                    <h3>Garden Tools</h3>
+                    <p>Keep your garden neat and healthy.</p>
+                    <a href="products.html?category=garden-tools">
+                        Explore Category <span>↗</span>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- BEST SELLERS SECTION -->
+<section class="best-sellers" id="best-sellers">
+    <div class="best-sellers-container">
+
+        <div class="best-sellers-heading">
+            <div>
+                <span class="best-sellers-tag">CUSTOMER FAVORITES</span>
+                <h2>Our <span>Best Sellers</span></h2>
+                <p>Popular tools trusted by DIY enthusiasts and professionals.</p>
+            </div>
+
+            <a href="products.html" class="view-all-products">
+                View All Tools <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="best-sellers-grid">
+
+            <!-- Product 1 -->
+            <article class="seller-card">
+                <div class="seller-image">
+                    <span class="seller-sale">POPULAR</span>
+                    <button class="seller-wishlist" type="button"
+                        aria-label="Add cordless drill to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <img
+                        src="images/powerdrill.jpg"
+                        alt="Power drill and workshop tools"
+                        loading="lazy">
+                </div>
+
+                <div class="seller-info">
+                    <span class="seller-category">POWER TOOLS</span>
+                    <h3>Cordless Power Drill</h3>
+
+                    <div class="seller-rating">
+                        <span>★★★★★</span>
+                        <small>(4.8)</small>
+                    </div>
+
+                    <div class="seller-price">
+                        <strong>₹250</strong>
+                        <span>/ day</span>
+                        <del>₹300</del>
+                    </div>
+
+                    <p class="seller-availability">
+                        <span></span> Available for rent
+                    </p>
+
+                    <button class="seller-cart-btn" type="button"
+                        data-product="Cordless Power Drill"
+                        data-price="250">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="seller-card">
+                <div class="seller-image">
+                    <span class="seller-sale">SAVE 15%</span>
+                    <button class="seller-wishlist" type="button"
+                        aria-label="Add angle grinder to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <img
+                        src="images/image6.jpg"
+                        alt="Hand tools and power equipment"
+                        loading="lazy">
+                </div>
+
+                <div class="seller-info">
+                    <span class="seller-category">POWER TOOLS</span>
+                    <h3>Angle Grinder</h3>
+
+                    <div class="seller-rating">
+                        <span>★★★★★</span>
+                        <small>(4.7)</small>
+                    </div>
+
+                    <div class="seller-price">
+                        <strong>₹180</strong>
+                        <span>/ day</span>
+                        <del>₹210</del>
+                    </div>
+
+                    <p class="seller-availability">
+                        <span></span> Available for rent
+                    </p>
+
+                    <button class="seller-cart-btn" type="button"
+                        data-product="Angle Grinder"
+                        data-price="180">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <!-- Product 3 -->
+            <article class="seller-card">
+                <div class="seller-image">
+                    <span class="seller-sale">BEST VALUE</span>
+                    <button class="seller-wishlist" type="button"
+                        aria-label="Add tool kit to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <img
+                        src="images/image7.avif"
+                        alt="Tool kit for repair and DIY projects"
+                        loading="lazy">
+                </div>
+
+                <div class="seller-info">
+                    <span class="seller-category">HAND TOOLS</span>
+                    <h3>Professional Tool Kit</h3>
+
+                    <div class="seller-rating">
+                        <span>★★★★★</span>
+                        <small>(4.9)</small>
+                    </div>
+
+                    <div class="seller-price">
+                        <strong>₹150</strong>
+                        <span>/ day</span>
+                        <del>₹200</del>
+                    </div>
+
+                    <p class="seller-availability">
+                        <span></span> Available for rent
+                    </p>
+
+                    <button class="seller-cart-btn" type="button"
+                        data-product="Professional Tool Kit"
+                        data-price="150">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <!-- Product 4 -->
+            <article class="seller-card">
+                <div class="seller-image">
+                    <span class="seller-sale">POPULAR</span>
+                    <button class="seller-wishlist" type="button"
+                        aria-label="Add garden tool to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <img
+                        src="images/image5.avif"
+                        alt="Garden equipment for outdoor projects"
+                        loading="lazy">
+                </div>
+
+                <div class="seller-info">
+                    <span class="seller-category">GARDEN TOOLS</span>
+                    <h3>Garden Tool Set</h3>
+
+                    <div class="seller-rating">
+                        <span>★★★★★</span>
+                        <small>(4.6)</small>
+                    </div>
+
+                    <div class="seller-price">
+                        <strong>₹120</strong>
+                        <span>/ day</span>
+                        <del>₹150</del>
+                    </div>
+
+                    <p class="seller-availability">
+                        <span></span> Available for rent
+                    </p>
+
+                    <button class="seller-cart-btn" type="button"
+                        data-product="Garden Tool Set"
+                        data-price="120">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="seller-cart-message" id="sellerCartMessage"
+            aria-live="polite"></p>
+
+    </div>
+</section>
+
+
+<!-- HOW IT WORKS SECTION -->
+<section class="how-it-works" id="how-it-works">
+    <div class="how-container">
+
+        <div class="how-heading">
+            <span class="how-tag">SIMPLE & CONVENIENT</span>
+            <h2>How It <span>Works</span></h2>
+            <p>Get the right tools for your project in four simple steps.</p>
+        </div>
+
+        <div class="how-steps">
+
+            <!-- Step 1 -->
+            <div class="how-step">
+                <div class="how-icon-wrap">
+                    <div class="how-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <span class="how-number">01</span>
+                </div>
+                <h3>Choose Your Tool</h3>
+                <p>Browse our collection and find the perfect tool for your project.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="how-step">
+                <div class="how-icon-wrap">
+                    <div class="how-icon">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    <span class="how-number">02</span>
+                </div>
+                <h3>Select Rental Period</h3>
+                <p>Choose daily or weekly rental options that suit your schedule.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="how-step">
+                <div class="how-icon-wrap">
+                    <div class="how-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <span class="how-number">03</span>
+                </div>
+                <h3>Get Delivery</h3>
+                <p>Get your selected equipment delivered, ready for the job.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="how-step">
+                <div class="how-icon-wrap">
+                    <div class="how-icon">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </div>
+                    <span class="how-number">04</span>
+                </div>
+                <h3>Return the Tool</h3>
+                <p>Return the equipment when you're finished with your project.</p>
+            </div>
+
+        </div>
+
+        <div class="how-cta">
+            <p>Ready to start your next project?</p>
+            <a href="products.html" class="how-cta-btn">
+                Browse Tools <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+<section class="special-offers">
+  <div class="offer-bg"></div>
+
+  <div class="offer-content">
+    <span class="offer-label">LIMITED TIME OFFER</span>
+
+    <h2>
+      Big Savings on
+      <span>Every Project!</span>
+    </h2>
+
+    <p>
+      Get the tools you need at prices you'll love.
+      Enjoy special deals on selected tools and equipment.
+    </p>
+
+    <div class="offer-discount">
+      <strong>UP TO 30% OFF</strong>
+      <span>On Selected Tools</span>
+    </div>
+
+    <a href="#deals" class="offer-btn">
+      Shop Deals <span>→</span>
+    </a>
+  </div>
+
+  <div class="offer-image">
+    <img
+      src="images/image8.png"
+      alt="Professional tools and equipment"
+    />
+    <div class="offer-sticker">
+      <span>SPECIAL</span>
+      <strong>DEALS</strong>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="images/logo.png"
+                         alt="ToolNest Logo"
+                         class="logo-image">
+
+                    <div>
+                        <div class="brand-name">Tool<span>Nest</span></div>
+                        <div class="tagline">Rent Tools • Build Dreams</div>
+                    </div>
+                </a>
+
+                <p>
+                    Your one-stop platform for renting quality tools
+                    and equipment for DIY projects, home improvements,
+                    and professional work.
+                </p>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Rental Guide</a></li>
+                    <li><a href="#">Popular Tools</a></li>
+                    <li><a href="#">Power Tools</a></li>
+                    <li><a href="#">My Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Contact Us</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>123 Tool Street, Your City, India</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>hello@toolnest.com</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ToolNest. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
+

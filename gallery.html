@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolNest | Tool & Equipment Rental</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+
+
+<header class="site-header">
+    <nav class="navbar container">
+
+        <a href="#" class="logo">
+            <img src="images/logo.png"
+                 alt="ToolNest Logo"
+                 class="logo-image">
+
+            <div>
+                <div class="brand-name">Tool<span>Nest</span></div>
+                <div class="tagline">Rent Tools • Build Dreams</div>
+            </div>
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+
+                <li class="nav-item dropdown">
+                    <button class="dropdown-toggle"
+                            id="homeDropdown"
+                            aria-expanded="false"
+                            type="button">
+                        Home <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                    <ul class="dropdown-menu" id="homeDropdownMenu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="about.html">About Us</a></li>
+                <li class="nav-item"><a href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a href="catalogue.html">Catalogue</a></li>
+                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+        </div>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn" id="rtlToggle"
+                    title="Toggle RTL" aria-label="Toggle RTL">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+
+            <button class="icon-btn" id="themeToggle"
+                    title="Toggle theme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+
+            <a href="login.html" class="login-btn">
+                <span>Login</span>
+            </a>
+
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+
+
+<section class="gallery-hero">
+  <div class="gallery-hero-bg"></div>
+
+  <div class="gallery-hero-content">
+    <span class="gallery-eyebrow">
+      OUR WORK IN FOCUS
+    </span>
+
+    <h1>
+      Explore Our <span>Gallery</span>
+    </h1>
+
+    <p>
+      Take a closer look at our products, workspace,
+      and completed projects. Discover the tools,
+      people, and work behind every successful project.
+    </p>
+
+    <a href="#gallery-grid" class="gallery-hero-btn">
+      Explore Gallery
+      <span class="gallery-btn-arrow">↘</span>
+    </a>
+
+    <div class="gallery-hero-note">
+      <span class="gallery-note-dot"></span>
+      Products · Workspace · Projects
+    </div>
+  </div>
+
+  <div class="gallery-hero-decoration">
+    <span class="gallery-ring gallery-ring-one"></span>
+    <span class="gallery-ring gallery-ring-two"></span>
+  </div>
+</section>
+
+
+<section class="product-gallery" id="gallery-grid">
+  <div class="gallery-container">
+
+    <div class="gallery-heading">
+      <span class="gallery-tagline">OUR PRODUCT COLLECTION</span>
+      <h2>Explore Our <span>Product Gallery</span></h2>
+      <p>
+        Take a closer look at our tools, equipment, and accessories
+        designed to support every project.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <button class="gallery-card" type="button"
+        data-image="images/hand-tools.jpg"
+        data-title="Hand Tools">
+        <img src="images/hand-tools.jpg"
+          alt="Hand tools collection" loading="lazy">
+        <span class="gallery-card-overlay">
+          <span class="gallery-card-text">
+            <small>01 / TOOL COLLECTION</small>
+            <strong>Hand Tools</strong>
+          </span>
+          <span class="gallery-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+      <button class="gallery-card" type="button"
+        data-image="images/powertools.jpg"
+        data-title="Power Tools">
+        <img src="images/powertools.jpg"
+          alt="Power tools collection" loading="lazy">
+        <span class="gallery-card-overlay">
+          <span class="gallery-card-text">
+            <small>02 / TOOL COLLECTION</small>
+            <strong>Power Tools</strong>
+          </span>
+          <span class="gallery-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+      <button class="gallery-card" type="button"
+        data-image="images/handtools.jpg"
+        data-title="Workshop Equipment">
+        <img src="images/handtools.jpg"
+          alt="Workshop equipment" loading="lazy">
+        <span class="gallery-card-overlay">
+          <span class="gallery-card-text">
+            <small>03 / EQUIPMENT</small>
+            <strong>Workshop Equipment</strong>
+          </span>
+          <span class="gallery-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+      <button class="gallery-card" type="button"
+        data-image="images/safetyequipment.webp"
+        data-title="Safety Equipment">
+        <img src="images/safetyequipment.webp"
+          alt="Safety equipment collection" loading="lazy">
+        <span class="gallery-card-overlay">
+          <span class="gallery-card-text">
+            <small>04 / SAFETY</small>
+            <strong>Safety Equipment</strong>
+          </span>
+          <span class="gallery-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+      <button class="gallery-card" type="button"
+        data-image="images/accessoriestools.webp"
+        data-title="Accessories">
+        <img src="images/accessoriestools.webp"
+          alt="Tool accessories collection" loading="lazy">
+        <span class="gallery-card-overlay">
+          <span class="gallery-card-text">
+            <small>05 / ACCESSORIES</small>
+            <strong>Accessories</strong>
+          </span>
+          <span class="gallery-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+    </div>
+
+    <p class="gallery-hint">
+      <span aria-hidden="true">＋</span>
+      Click any image to view it in detail
+    </p>
+
+  </div>
+</section>
+
+<!-- Image Lightbox -->
+<div class="gallery-lightbox" id="galleryLightbox"
+  role="dialog" aria-modal="true"
+  aria-label="Image preview" aria-hidden="true">
+
+  <button class="lightbox-close" type="button"
+    aria-label="Close image preview">&times;</button>
+
+  <button class="lightbox-prev" type="button"
+    aria-label="Previous image">&#10094;</button>
+
+  <figure class="lightbox-figure">
+    <img id="lightboxImage" src="" alt="">
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+
+  <button class="lightbox-next" type="button"
+    aria-label="Next image">&#10095;</button>
+</div>
+
+<section class="events-gallery" id="events-gallery">
+  <div class="events-container">
+
+    <div class="events-heading">
+      <span class="events-tagline">OUR JOURNEY & EXPERIENCES</span>
+      <h2>Events & <span>Exhibitions Gallery</span></h2>
+      <p>
+        Explore our trade shows, product demonstrations, customer
+        interactions, company events, and training sessions.
+      </p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="events-filters">
+      <button class="event-filter active" data-filter="all" type="button">
+        All Events
+      </button>
+      <button class="event-filter" data-filter="trade-shows" type="button">
+        Trade Shows
+      </button>
+      <button class="event-filter" data-filter="demonstrations" type="button">
+        Product Demonstrations
+      </button>
+      <button class="event-filter" data-filter="meetings" type="button">
+        Customer Meetings
+      </button>
+      <button class="event-filter" data-filter="company" type="button">
+        Company Events
+      </button>
+      <button class="event-filter" data-filter="training" type="button">
+        Training Sessions
+      </button>
+    </div>
+
+    <!-- Events Grid -->
+    <div class="events-grid">
+
+      <button class="event-card" type="button"
+        data-category="trade-shows"
+        data-title="Trade Shows"
+        data-image="images/trade-shows.jpg">
+
+        <img src="images/showcasing.jpg"
+          alt="ToolRent at a trade show" loading="lazy">
+
+        <span class="event-overlay">
+          <span class="event-info">
+            <small>01 / INDUSTRY EVENTS</small>
+            <strong>Trade Shows</strong>
+            <span>Showcasing our rental solutions</span>
+          </span>
+          <span class="event-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+      <button class="event-card" type="button"
+        data-category="demonstrations"
+        data-title="Product Demonstrations"
+        data-image="images/product-demonstrations.jpg">
+
+        <img src="images/industrial.png"
+          alt="Equipment product demonstration" loading="lazy">
+
+        <span class="event-overlay">
+          <span class="event-info">
+            <small>02 / LIVE DEMONSTRATIONS</small>
+            <strong>Product Demonstrations</strong>
+            <span>Tools in action</span>
+          </span>
+          <span class="event-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+      <button class="event-card" type="button"
+        data-category="meetings"
+        data-title="Customer Meetings"
+        data-image="images/customer-meetings.jpg">
+
+        <img src="images/customer meetings.png"
+          alt="Customer meeting with equipment specialists"
+          loading="lazy">
+
+        <span class="event-overlay">
+          <span class="event-info">
+            <small>03 / CUSTOMER RELATIONS</small>
+            <strong>Customer Meetings</strong>
+            <span>Building lasting partnerships</span>
+          </span>
+          <span class="event-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+      <button class="event-card" type="button"
+        data-category="company"
+        data-title="Company Events"
+        data-image="images/company-events.jpg">
+
+        <img src="images/teamwork.png"
+          alt="ToolRent company event" loading="lazy">
+
+        <span class="event-overlay">
+          <span class="event-info">
+            <small>04 / OUR TEAM</small>
+            <strong>Company Events</strong>
+            <span>Celebrating teamwork and success</span>
+          </span>
+          <span class="event-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+      <button class="event-card" type="button"
+        data-category="training"
+        data-title="Training Sessions"
+        data-image="images/training-sessions.jpg">
+
+        <img src="images/image18.png"
+          alt="Equipment training session" loading="lazy">
+
+        <span class="event-overlay">
+          <span class="event-info">
+            <small>05 / LEARNING & SAFETY</small>
+            <strong>Training Sessions</strong>
+            <span>Knowledge, skills and safe handling</span>
+          </span>
+          <span class="event-zoom" aria-hidden="true">↗</span>
+        </span>
+      </button>
+
+    </div>
+
+    <p class="events-hint">
+      <span aria-hidden="true">＋</span>
+      Select a category or click any image to explore
+    </p>
+
+  </div>
+</section>
+
+<!-- Image Lightbox -->
+<div class="event-lightbox" id="eventLightbox"
+  role="dialog" aria-modal="true"
+  aria-label="Event image preview" aria-hidden="true">
+
+  <button class="event-lightbox-close" type="button"
+    aria-label="Close preview">&times;</button>
+
+  <button class="event-lightbox-prev" type="button"
+    aria-label="Previous image">&#10094;</button>
+
+  <figure class="event-lightbox-figure">
+    <img id="eventLightboxImage" src="" alt="">
+    <figcaption id="eventLightboxCaption"></figcaption>
+  </figure>
+
+  <button class="event-lightbox-next" type="button"
+    aria-label="Next image">&#10095;</button>
+</div>
+
+<section class="gallery-section" id="gallery">
+  <div class="gallery-container">
+
+    <div class="gallery-heading">
+      <span class="gallery-subtitle">OUR GALLERY</span>
+      <h2>Explore Our Gallery</h2>
+      <p>Explore our tools, workshops, projects and events.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="products">Products</button>
+      <button class="filter-btn" data-filter="workshop">Workshop</button>
+      <button class="filter-btn" data-filter="projects">Projects</button>
+      <button class="filter-btn" data-filter="events">Events</button>
+    </div>
+
+    <!-- Gallery Images -->
+    <div class="gallery-grid">
+
+      <div class="gallery-item" data-category="products">
+        <img src="images/rentaltools.jpeg" alt="Rental tools">
+      </div>
+
+      <div class="gallery-item" data-category="workshop">
+        <img src="images/workshop.webp" alt="Workshop equipment">
+      </div>
+
+      <div class="gallery-item" data-category="projects">
+        <img src="images/constructionproject.webp" alt="Construction project">
+      </div>
+
+      <div class="gallery-item" data-category="events">
+        <img src="images/customer meetings.png" alt="Company event">
+      </div>
+
+      <div class="gallery-item" data-category="products">
+        <img src="images/powertools.jpg" alt="Power tools">
+      </div>
+
+      <div class="gallery-item" data-category="workshop">
+        <img src="images/handtools.jpg" alt="Tools in workshop">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta">
+  <div class="cta-overlay"></div>
+
+  <div class="cta-container">
+    <span class="cta-tag">LET'S GET STARTED</span>
+
+    <h2>Want to Know More About Our Products?</h2>
+
+    <p>
+      Explore our complete catalogue or get in touch with our team.
+    </p>
+
+    <div class="cta-actions">
+      <a href="catalogue.html" class="cta-button cta-button-primary">
+        View Catalogue
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+
+      <a href="contact.html" class="cta-button cta-button-outline">
+        Contact Us
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="images/logo.png"
+                         alt="ToolNest Logo"
+                         class="logo-image">
+
+                    <div>
+                        <div class="brand-name">Tool<span>Nest</span></div>
+                        <div class="tagline">Rent Tools • Build Dreams</div>
+                    </div>
+                </a>
+
+                <p>
+                    Your one-stop platform for renting quality tools
+                    and equipment for DIY projects, home improvements,
+                    and professional work.
+                </p>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Rental Guide</a></li>
+                    <li><a href="#">Popular Tools</a></li>
+                    <li><a href="#">Power Tools</a></li>
+                    <li><a href="#">My Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Contact Us</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>123 Tool Street, Your City, India</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>hello@toolnest.com</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ToolNest. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

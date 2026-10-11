@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolNest | Tool & Equipment Rental</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <nav class="navbar container">
+
+        <a href="#" class="logo">
+            <img src="images/logo.png"
+                 alt="ToolNest Logo"
+                 class="logo-image">
+
+            <div>
+                <div class="brand-name">Tool<span>Nest</span></div>
+                <div class="tagline">Rent Tools • Build Dreams</div>
+            </div>
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+
+                <li class="nav-item dropdown">
+                    <button class="dropdown-toggle"
+                            id="homeDropdown"
+                            aria-expanded="false"
+                            type="button">
+                        Home <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                    <ul class="dropdown-menu" id="homeDropdownMenu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="about.html">About Us</a></li>
+                <li class="nav-item"><a href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a href="catalogue.html">Catalogue</a></li>
+                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+
+            </ul>
+        </div>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn" id="rtlToggle"
+                    title="Toggle RTL" aria-label="Toggle RTL">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+
+            <button class="icon-btn" id="themeToggle"
+                    title="Toggle theme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+
+            <a href="login.html" class="login-btn">
+                <span>Login</span>
+            </a>
+
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+
+
+<!-- HERO / BANNER SECTION -->
+<section class="hero-section" id="home">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                TOOLS FOR EVERY PROJECT
+            </span>
+
+            <h1>
+                Rent the Right Tools
+                <span>for Every Project</span>
+            </h1>
+
+            <p class="hero-description">
+                Get the tools you need without the cost of buying them.
+                Affordable rentals, reliable equipment, and flexible
+                plans for every DIY project.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="tools.html" class="btn btn-primary">
+                    Browse Tools
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#pricing" class="btn btn-outline">
+                    Explore Pricing
+                </a>
+            </div>
+
+            <div class="hero-features">
+                <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Affordable Rentals
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Quality Tools
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Easy Booking
+                </span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- POPULAR CATEGORIES SECTION -->
+<section class="categories-section" id="categories">
+    <div class="categories-container">
+
+        <!-- Section Heading -->
+        <div class="categories-header">
+            <span class="section-tag">
+                EXPLORE OUR COLLECTION
+            </span>
+
+            <h2>
+                Popular <span>Categories</span>
+            </h2>
+
+            <p>
+                Find the right tools and equipment for every DIY
+                project, repair, or construction task.
+            </p>
+        </div>
+
+        <!-- Category Cards -->
+        <div class="categories-grid">
+
+            <!-- Card 1 -->
+            <a href="tools.html?category=power-tools"
+               class="category-card">
+                <div class="category-image">
+                    <img src="images/powertools.jpg"
+                         alt="Power tools and cordless drill"
+                         loading="lazy">
+                </div>
+
+                <div class="category-content">
+                    <span class="category-accent"></span>
+                    <h3>Power Tools</h3>
+                    <p>Drills, grinders &amp; more</p>
+
+                    <span class="category-link">
+                        Explore Tools
+                        <span>→</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="tools.html?category=hand-tools"
+               class="category-card">
+                <div class="category-image">
+                    <img src="images/handtools.jpg"
+                         alt="Hammer, pliers and hand tools"
+                         loading="lazy">
+                </div>
+
+                <div class="category-content">
+                    <span class="category-accent"></span>
+                    <h3>Hand Tools</h3>
+                    <p>Everyday tools made easy</p>
+
+                    <span class="category-link">
+                        Explore Tools
+                        <span>→</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="tools.html?category=garden"
+               class="category-card">
+                <div class="category-image">
+                    <img src="images/garden.jpg"
+                         alt="Lawn mower and garden equipment"
+                         loading="lazy">
+                </div>
+
+                <div class="category-content">
+                    <span class="category-accent"></span>
+                    <h3>Garden Equipment</h3>
+                    <p>Keep your garden beautiful</p>
+
+                    <span class="category-link">
+                        Explore Tools
+                        <span>→</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="tools.html?category=construction"
+               class="category-card">
+                <div class="category-image">
+                    <img src="images/construction.jpg"
+                         alt="Construction equipment at a worksite"
+                         loading="lazy">
+                </div>
+
+                <div class="category-content">
+                    <span class="category-accent"></span>
+                    <h3>Construction Equipment</h3>
+                    <p>Reliable tools for big jobs</p>
+
+                    <span class="category-link">
+                        Explore Tools
+                        <span>→</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="tools.html?category=safety"
+               class="category-card">
+                <div class="category-image">
+                    <img src="images/ladders.jpg"
+                         alt="Ladder, safety helmet and protective gear"
+                         loading="lazy">
+                </div>
+
+                <div class="category-content">
+                    <span class="category-accent"></span>
+                    <h3>Ladders &amp; Safety Gear</h3>
+                    <p>Work safely and confidently</p>
+
+                    <span class="category-link">
+                        Explore Tools
+                        <span>→</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 6 -->
+            <a href="tools.html?category=cleaning"
+               class="category-card">
+                <div class="category-image">
+                    <img src="images/cleaning.jpg"
+                         alt="Pressure washer and cleaning equipment"
+                         loading="lazy">
+                </div>
+
+                <div class="category-content">
+                    <span class="category-accent"></span>
+                    <h3>Cleaning Equipment</h3>
+                    <p>Make cleanup quick and easy</p>
+
+                    <span class="category-link">
+                        Explore Tools
+                        <span>→</span>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- HOW IT WORKS SECTION -->
+<section class="how-section" id="how-it-works">
+    <div class="how-container">
+
+        <div class="how-heading">
+            <span class="how-subtitle">SIMPLE & EASY</span>
+
+            <h2>How It <span>Works</span></h2>
+
+            <p>
+                Renting tools with ToolNest is quick and hassle-free.
+                Follow these three simple steps to get started with
+                your next DIY project.
+            </p>
+        </div>
+
+        <div class="how-grid">
+
+            <!-- STEP 1 -->
+            <div class="how-card">
+                <div class="how-number">01</div>
+
+                <div class="how-icon">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+
+                <h3>Choose Your Tool</h3>
+
+                <p>
+                    Explore our wide range of quality tools and
+                    choose the right equipment for your project.
+                </p>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="how-card">
+                <div class="how-number">02</div>
+
+                <div class="how-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <h3>Select Rental Dates</h3>
+
+                <p>
+                    Select your preferred rental dates and choose
+                    a rental period that suits your schedule.
+                </p>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="how-card">
+                <div class="how-number">03</div>
+
+                <div class="how-icon">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <h3>Book & Collect</h3>
+
+                <p>
+                    Confirm your booking and collect your equipment
+                    to get started on your DIY project.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CUSTOMER REVIEWS SECTION -->
+<section class="reviews-section" id="reviews">
+    <div class="reviews-container">
+
+        <!-- Section Heading -->
+        <div class="reviews-heading">
+            <span class="reviews-subtitle">HAPPY CUSTOMERS</span>
+
+            <h2>What Our Customers <span>Say</span></h2>
+
+            <p>
+                Discover what our customers think about their
+                ToolNest rental experience.
+            </p>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="reviews-grid">
+
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    "ToolNest made my home renovation so much easier.
+                    The tools were in excellent condition and the
+                    rental prices were very affordable."
+                </p>
+
+                <div class="review-customer">
+                    <div class="customer-avatar">RK</div>
+                    <div>
+                        <h3>Rahul Kumar</h3>
+                        <span>Home DIY Project</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    "The booking process was simple and convenient.
+                    I found the equipment I needed without having
+                    to spend money buying new tools."
+                </p>
+
+                <div class="review-customer">
+                    <div class="customer-avatar">SP</div>
+                    <div>
+                        <h3>Sneha Patel</h3>
+                        <span>Garden Improvement</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    "Great experience from booking to collection.
+                    The flexible rental period helped me finish
+                    my project at my own pace."
+                </p>
+
+                <div class="review-customer">
+                    <div class="customer-avatar">AM</div>
+                    <div>
+                        <h3>Arjun Mehta</h3>
+                        <span>Furniture DIY Project</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section" id="faq">
+    <div class="faq-container">
+
+        <div class="faq-heading">
+            <span class="faq-subtitle">GOT QUESTIONS?</span>
+
+            <h2>Frequently Asked <span>Questions</span></h2>
+
+            <p>
+                Find answers to common questions about renting
+                tools and equipment with ToolNest.
+            </p>
+        </div>
+
+        <div class="faq-list">
+
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-question"
+                        aria-expanded="false">
+                    <span>How does tool rental work?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Browse our tools, select the equipment you
+                            need, choose your rental dates, and confirm
+                            your booking. Collect your equipment as
+                            instructed and return it at the end of
+                            your rental period.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-question"
+                        aria-expanded="false">
+                    <span>What are the rental charges?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Rental charges depend on the tool, rental
+                            duration, and applicable fees. You can check
+                            the daily rental price on the tool details
+                            page before confirming your booking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-question"
+                        aria-expanded="false">
+                    <span>Is a security deposit required?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            A security deposit may be required for
+                            certain tools. The deposit amount and
+                            applicable conditions will be shown before
+                            you confirm your rental booking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-question"
+                        aria-expanded="false">
+                    <span>What happens if a tool is damaged?</span>
+                    <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>
+                            Please report any damage to our support
+                            team as soon as possible. Repair costs or
+                            other charges may apply depending on the
+                            damage and the rental agreement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- NEWSLETTER / CTA SECTION -->
+<section class="newsletter-section" id="newsletter">
+
+    <div class="newsletter-overlay"></div>
+
+    <div class="newsletter-container">
+
+        <div class="newsletter-content">
+
+            <span class="newsletter-badge">
+                STAY IN THE LOOP
+            </span>
+
+            <h2>
+                Get Updates on
+                <span>New Tools & Offers</span>
+            </h2>
+
+            <p class="newsletter-description">
+                Subscribe to our newsletter for the latest tools,
+                exclusive offers, and helpful DIY project updates.
+            </p>
+
+            <form class="newsletter-form" id="newsletterForm">
+
+                <div class="newsletter-input-wrapper">
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="newsletterEmail"
+                        placeholder="Enter your email address"
+                        aria-label="Email address"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="newsletter-btn">
+                    Subscribe
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+            <p class="newsletter-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                No spam. Unsubscribe anytime.
+            </p>
+
+            <p
+                class="newsletter-message"
+                id="newsletterMessage"
+                aria-live="polite"
+            ></p>
+
+        </div>
+
+    </div>
+
+</section>
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="images/logo.png"
+                         alt="ToolNest Logo"
+                         class="logo-image">
+
+                    <div>
+                        <div class="brand-name">Tool<span>Nest</span></div>
+                        <div class="tagline">Rent Tools • Build Dreams</div>
+                    </div>
+                </a>
+
+                <p>
+                    Your one-stop platform for renting quality tools
+                    and equipment for DIY projects, home improvements,
+                    and professional work.
+                </p>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Rental Guide</a></li>
+                    <li><a href="#">Popular Tools</a></li>
+                    <li><a href="#">Power Tools</a></li>
+                    <li><a href="#">My Dashboard</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Contact Us</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>123 Tool Street, Your City, India</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>hello@toolnest.com</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ToolNest. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
+

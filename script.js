@@ -1,492 +1,355 @@
+/* =========================================================
+   TOOLNEST - COMPLETE JAVASCRIPT
+   Includes: navbar, dropdown, mobile menu, theme, RTL,
+   FAQ accordion, gallery lightboxes, dashboard demo.
+   Frontend demo only; dashboard data is not connected to a backend.
+========================================================= */
 
-/* ========================================
-   TOOLRENT - COMPLETE JAVASCRIPT
-======================================== */
-
-// HTML Elements
-const homeDropdown = document.getElementById("homeDropdown");
-const dropdownMenu = document.getElementById("homeDropdownMenu");
-const navMenu = document.getElementById("navMenu");
-const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-const themeToggle = document.getElementById("themeToggle");
-const themeIcon = document.getElementById("themeIcon");
-const rtlToggle = document.getElementById("rtlToggle");
-
-
-// ========================================
-// 1. HOME DROPDOWN
-// ========================================
-
-if (homeDropdown && dropdownMenu) {
-    homeDropdown.addEventListener("click", (event) => {
-        event.stopPropagation();
-
-        const isOpen = dropdownMenu.classList.toggle("show");
-
-        homeDropdown.setAttribute("aria-expanded", String(isOpen));
-    });
-}
-
-
-// ========================================
-// 2. MOBILE NAVIGATION
-// ========================================
-
-if (mobileMenuBtn && navMenu) {
-    mobileMenuBtn.addEventListener("click", () => {
-        const isOpen = navMenu.classList.toggle("open");
-
-        mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
-
-        mobileMenuBtn.innerHTML = isOpen
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
-    });
-
-    // Close menu after clicking a navigation link
-    navMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-            navMenu.classList.remove("open");
-
-            mobileMenuBtn.setAttribute("aria-expanded", "false");
-
-            mobileMenuBtn.innerHTML =
-                '<i class="fa-solid fa-bars"></i>';
-        });
-    });
-}
-
-
-// ========================================
-// 3. DARK MODE / LIGHT MODE
-// ========================================
-
-function applyTheme(theme) {
-    const selectedTheme = theme === "dark" ? "dark" : "light";
-
-    // Apply theme to the entire document
-    document.documentElement.setAttribute(
-        "data-theme",
-        selectedTheme
-    );
-
-    // Apply classes for CSS compatibility
-    document.body.classList.toggle(
-        "dark-mode",
-        selectedTheme === "dark"
-    );
-
-    document.body.classList.toggle(
-        "light-mode",
-        selectedTheme === "light"
-    );
-
-    // Update theme icon
-    if (themeIcon) {
-        themeIcon.className =
-            selectedTheme === "dark"
-                ? "fa-solid fa-sun"
-                : "fa-solid fa-moon";
-    }
-
-    // Update accessibility label
-    if (themeToggle) {
-        themeToggle.setAttribute(
-            "aria-label",
-            selectedTheme === "dark"
-                ? "Switch to light mode"
-                : "Switch to dark mode"
-        );
-
-        themeToggle.setAttribute("aria-pressed",
-            String(selectedTheme === "dark")
-        );
-    }
-
-    // Save theme preference
-    try {
-        localStorage.setItem("theme", selectedTheme);
-    } catch (error) {
-        console.warn("Theme preference could not be saved.");
-    }
-}
-
-
-// Load saved theme
-let initialTheme = "light";
-
-try {
-    initialTheme = localStorage.getItem("theme") || "light";
-} catch (error) {
-    console.warn("Saved theme could not be accessed.");
-}
-
-applyTheme(initialTheme);
-
-
-// Toggle theme on button click
-if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-        const currentTheme =
-            document.documentElement.getAttribute("data-theme") || "light";
-
-        const newTheme =
-            currentTheme === "dark" ? "light" : "dark";
-
-        applyTheme(newTheme);
-    });
-}
-
-
-// ========================================
-// 4. RTL / LTR DIRECTION
-// ========================================
-
-if (rtlToggle) {
-    rtlToggle.addEventListener("click", () => {
-        const currentDirection =
-            document.documentElement.getAttribute("dir") || "ltr";
-
-        const newDirection =
-            currentDirection === "rtl" ? "ltr" : "rtl";
-
-        document.documentElement.setAttribute("dir", newDirection);
-    });
-}
-
-
-// ========================================
-// 5. CLOSE DROPDOWN ON OUTSIDE CLICK
-// ========================================
-
-document.addEventListener("click", (event) => {
-    if (
-        dropdownMenu &&
-        !event.target.closest(".dropdown")
-    ) {
-        dropdownMenu.classList.remove("show");
-
-        if (homeDropdown) {
-            homeDropdown.setAttribute("aria-expanded", "false");
-        }
-    }
-});
-
-
-// ========================================
-// 6. CLOSE DROPDOWN WITH ESCAPE KEY
-// ========================================
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        if (dropdownMenu) {
-            dropdownMenu.classList.remove("show");
-        }
-
-        if (homeDropdown) {
-            homeDropdown.setAttribute("aria-expanded", "false");
-        }
-
-        if (navMenu && mobileMenuBtn) {
-            navMenu.classList.remove("open");
-
-            mobileMenuBtn.setAttribute("aria-expanded", "false");
-
-            mobileMenuBtn.innerHTML =
-                '<i class="fa-solid fa-bars"></i>';
-        }
-    }
-});
-/* ================= FAQ ACCORDION ================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-    const faqItems = document.querySelectorAll(".faq-item");
-
-    faqItems.forEach((item) => {
-        const question = item.querySelector(".faq-question");
-
-        question.addEventListener("click", () => {
-            const isOpen = item.classList.contains("active");
-
-            // Close all FAQ items
-            faqItems.forEach((faq) => {
-                faq.classList.remove("active");
-
-                const button = faq.querySelector(".faq-question");
-                button.setAttribute("aria-expanded", "false");
-            });
-
-            // Open the clicked item if it was closed
-            if (!isOpen) {
-                item.classList.add("active");
-                question.setAttribute("aria-expanded", "true");
-            }
-        });
-    });
-});
-
-
-/* ===== Product Gallery Lightbox ===== */
-
-(() => {
-  const cards = [...document.querySelectorAll(".gallery-card")];
-  const lightbox = document.getElementById("galleryLightbox");
-  const lightboxImage = document.getElementById("lightboxImage");
-  const lightboxCaption = document.getElementById("lightboxCaption");
-  const closeButton = document.querySelector(".lightbox-close");
-  const prevButton = document.querySelector(".lightbox-prev");
-  const nextButton = document.querySelector(".lightbox-next");
-
-  if (
-    !cards.length ||
-    !lightbox ||
-    !lightboxImage ||
-    !lightboxCaption
-  ) return;
-
-  let currentIndex = 0;
-  let lastFocusedElement = null;
-
-  function showImage(index) {
-    currentIndex = (index + cards.length) % cards.length;
-
-    const card = cards[currentIndex];
-    const image = card.querySelector("img");
-
-    lightboxImage.src = card.dataset.image || image.src;
-    lightboxImage.alt = image.alt;
-    lightboxCaption.textContent =
-      card.dataset.title || image.alt;
-
-    prevButton.disabled = cards.length < 2;
-    nextButton.disabled = cards.length < 2;
-  }
-
-  function openLightbox(index) {
-    lastFocusedElement = document.activeElement;
-    showImage(index);
-
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.classList.add("gallery-lightbox-open");
-
-    closeButton.focus();
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("gallery-lightbox-open");
-
-    lightboxImage.src = "";
-
-    if (lastFocusedElement) {
-      lastFocusedElement.focus();
-    }
-  }
-
-  cards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-      openLightbox(index);
-    });
-  });
-
-  closeButton.addEventListener("click", closeLightbox);
-
-  prevButton.addEventListener("click", () => {
-    showImage(currentIndex - 1);
-  });
-
-  nextButton.addEventListener("click", () => {
-    showImage(currentIndex + 1);
-  });
-
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (!lightbox.classList.contains("is-open")) return;
-
-    if (event.key === "Escape") {
-      closeLightbox();
-    } else if (event.key === "ArrowRight") {
-      showImage(currentIndex + 1);
-    } else if (event.key === "ArrowLeft") {
-      showImage(currentIndex - 1);
-    }
-  });
-})();
-
-(() => {
-  const cards = [...document.querySelectorAll(".event-card")];
-  const filters = [...document.querySelectorAll(".event-filter")];
-
-  const lightbox = document.getElementById("eventLightbox");
-  const lightboxImage = document.getElementById("eventLightboxImage");
-  const lightboxCaption = document.getElementById("eventLightboxCaption");
-
-  const closeButton = document.querySelector(".event-lightbox-close");
-  const prevButton = document.querySelector(".event-lightbox-prev");
-  const nextButton = document.querySelector(".event-lightbox-next");
-
-  if (!cards.length) return;
-
-  /* ===== CATEGORY FILTERS ===== */
-
-  filters.forEach((filter) => {
-    filter.addEventListener("click", () => {
-      const selectedCategory = filter.dataset.filter;
-
-      filters.forEach((button) => {
-        const isActive = button === filter;
-        button.classList.toggle("active", isActive);
-        button.setAttribute("aria-pressed", String(isActive));
-      });
-
-      cards.forEach((card) => {
-        const matches =
-          selectedCategory === "all" ||
-          card.dataset.category === selectedCategory;
-
-        card.classList.toggle("is-hidden", !matches);
-      });
-    });
-  });
-
-  /* ===== LIGHTBOX ===== */
-
-  if (
-    !lightbox ||
-    !lightboxImage ||
-    !lightboxCaption ||
-    !closeButton ||
-    !prevButton ||
-    !nextButton
-  ) {
-    return;
-  }
-
-  let visibleCards = [...cards];
-  let currentIndex = 0;
-  let lastFocusedElement = null;
-
-  function getVisibleCards() {
-    return cards.filter((card) => !card.classList.contains("is-hidden"));
-  }
-
-  function showImage(index) {
-    visibleCards = getVisibleCards();
-
-    if (!visibleCards.length) return;
-
-    currentIndex =
-      (index + visibleCards.length) % visibleCards.length;
-
-    const card = visibleCards[currentIndex];
-    const image = card.querySelector("img");
-
-    if (!image) return;
-
-    lightboxImage.src = image.currentSrc || image.src;
-    lightboxImage.alt = image.alt || "";
-    lightboxCaption.textContent =
-      card.dataset.title || image.alt || "";
-
-    const disableNavigation = visibleCards.length < 2;
-    prevButton.disabled = disableNavigation;
-    nextButton.disabled = disableNavigation;
-  }
-
-  function openLightbox(card) {
-    visibleCards = getVisibleCards();
-    currentIndex = visibleCards.indexOf(card);
-
-    if (currentIndex < 0) return;
-
-    lastFocusedElement = document.activeElement;
-
-    showImage(currentIndex);
-
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.classList.add("event-lightbox-open");
-
-    closeButton.focus();
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("event-lightbox-open");
-
-    lightboxImage.removeAttribute("src");
-
-    if (lastFocusedElement) {
-      lastFocusedElement.focus();
-    }
-  }
-
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      openLightbox(card);
-    });
-  });
-
-  closeButton.addEventListener("click", closeLightbox);
-
-  prevButton.addEventListener("click", () => {
-    showImage(currentIndex - 1);
-  });
-
-  nextButton.addEventListener("click", () => {
-    showImage(currentIndex + 1);
-  });
-
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (!lightbox.classList.contains("is-open")) return;
-
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
-
-    if (event.key === "ArrowLeft") {
-      showImage(currentIndex - 1);
-    }
-
-    if (event.key === "ArrowRight") {
-      showImage(currentIndex + 1);
-    }
-  });
-})();
-
-/* ToolNest / ToolRent Renter Dashboard
-   Frontend demo only — no backend, database, or real payment processing.
-   Save as script.js beside index.html and dashboard.css.
-*/
 (() => {
   "use strict";
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
+  /* ---------- NAVBAR ELEMENTS ---------- */
+  const homeDropdown = $("#homeDropdown");
+  const dropdownMenu = $("#homeDropdownMenu");
+  const navMenu = $("#navMenu");
+  const mobileMenuBtn = $("#mobileMenuBtn");
+  const themeToggle = $("#themeToggle");
+  const themeIcon = $("#themeIcon");
+  const rtlToggle = $("#rtlToggle");
+
+  /* ---------- THEME: SINGLE SOURCE OF TRUTH ---------- */
+  function applyTheme(theme, save = true) {
+    const selectedTheme = theme === "dark" ? "dark" : "light";
+
+    document.documentElement.setAttribute("data-theme", selectedTheme);
+    document.body.classList.toggle("dark-mode", selectedTheme === "dark");
+    document.body.classList.toggle("light-mode", selectedTheme === "light");
+
+    if (themeIcon) {
+      themeIcon.className = selectedTheme === "dark"
+        ? "fa-solid fa-sun"
+        : "fa-solid fa-moon";
+    }
+
+    if (themeToggle) {
+      themeToggle.setAttribute(
+        "aria-label",
+        selectedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
+      themeToggle.setAttribute("aria-pressed", String(selectedTheme === "dark"));
+      themeToggle.title = selectedTheme === "dark" ? "Light mode" : "Dark mode";
+    }
+
+    // Also updates optional dashboard theme button label/icon.
+    const dashboardThemeButton = $("#dashboardThemeToggle");
+    if (dashboardThemeButton) {
+      dashboardThemeButton.textContent = selectedTheme === "dark" ? "☀" : "◐";
+      dashboardThemeButton.setAttribute("aria-pressed", String(selectedTheme === "dark"));
+    }
+
+    if (save) {
+      try {
+        localStorage.setItem("theme", selectedTheme);
+      } catch (_) {
+        // Theme still works if localStorage is unavailable.
+      }
+    }
+  }
+
+  let savedTheme = "light";
+  try {
+    savedTheme = localStorage.getItem("theme") || "light";
+  } catch (_) {}
+  applyTheme(savedTheme, false);
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+  }
+
+  /* ---------- HOME DROPDOWN ---------- */
+  if (homeDropdown && dropdownMenu) {
+    homeDropdown.setAttribute("aria-expanded", "false");
+    homeDropdown.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
+      const open = dropdownMenu.classList.toggle("show");
+      homeDropdown.setAttribute("aria-expanded", String(open));
+    });
+  }
+
+  document.addEventListener("click", event => {
+    if (dropdownMenu && !event.target.closest(".dropdown")) {
+      dropdownMenu.classList.remove("show");
+      homeDropdown?.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  /* ---------- MOBILE NAVIGATION ---------- */
+  function closeMobileMenu() {
+    navMenu?.classList.remove("open");
+    mobileMenuBtn?.setAttribute("aria-expanded", "false");
+    if (mobileMenuBtn) {
+      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+    }
+  }
+
+  if (mobileMenuBtn && navMenu) {
+    mobileMenuBtn.setAttribute("aria-expanded", "false");
+    mobileMenuBtn.addEventListener("click", () => {
+      const open = navMenu.classList.toggle("open");
+      mobileMenuBtn.setAttribute("aria-expanded", String(open));
+      mobileMenuBtn.innerHTML = open
+        ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+    });
+
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+  }
+
+  /* ---------- RTL / LTR ---------- */
+  if (rtlToggle) {
+    rtlToggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("dir") || "ltr";
+      const next = current === "rtl" ? "ltr" : "rtl";
+      document.documentElement.setAttribute("dir", next);
+      rtlToggle.setAttribute("aria-pressed", String(next === "rtl"));
+      try { localStorage.setItem("direction", next); } catch (_) {}
+    });
+
+    try {
+      const direction = localStorage.getItem("direction");
+      if (direction === "rtl" || direction === "ltr") {
+        document.documentElement.setAttribute("dir", direction);
+      }
+    } catch (_) {}
+  }
+
+  /* ---------- ESCAPE KEY ---------- */
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      dropdownMenu?.classList.remove("show");
+      homeDropdown?.setAttribute("aria-expanded", "false");
+      closeMobileMenu();
+      closeGalleryLightbox();
+      closeEventLightbox();
+    }
+  });
+
+  /* ---------- ACTIVE NAV LINK ---------- */
+  function setActiveNavigation() {
+    const currentPage = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+    const links = $$(".site-header .nav-links a[href]");
+
+    links.forEach(link => {
+      const href = link.getAttribute("href") || "";
+      const page = href.split("/").pop().split("#")[0].toLowerCase();
+      const active = page === currentPage && page !== "";
+      link.classList.toggle("active", active);
+      if (active) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+
+    const isHome = ["", "index.html", "home.html", "home2.html"].includes(currentPage);
+    homeDropdown?.classList.toggle("active", isHome);
+  }
+
+  /* ---------- FAQ ACCORDION ---------- */
+  function initFAQs() {
+    $$(".faq-item").forEach(item => {
+      const question = $(".faq-question", item);
+      if (!question) return;
+
+      question.setAttribute("aria-expanded", String(item.classList.contains("active")));
+      question.addEventListener("click", () => {
+        const wasOpen = item.classList.contains("active");
+        $$(".faq-item").forEach(faq => {
+          faq.classList.remove("active");
+          $(".faq-question", faq)?.setAttribute("aria-expanded", "false");
+        });
+        if (!wasOpen) {
+          item.classList.add("active");
+          question.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  }
+
+  /* ---------- GALLERY LIGHTBOX ---------- */
+  let galleryCurrentIndex = 0;
+  let galleryCards = [];
+  let galleryLastFocus = null;
+
+  function showGalleryImage(index) {
+    const lightbox = $("#galleryLightbox");
+    const imageTarget = $("#lightboxImage");
+    const caption = $("#lightboxCaption");
+    if (!lightbox || !imageTarget || !caption || !galleryCards.length) return;
+
+    galleryCurrentIndex = (index + galleryCards.length) % galleryCards.length;
+    const card = galleryCards[galleryCurrentIndex];
+    const image = $("img", card);
+    if (!image) return;
+
+    imageTarget.src = card.dataset.image || image.currentSrc || image.src;
+    imageTarget.alt = image.alt || "";
+    caption.textContent = card.dataset.title || image.alt || "";
+    const disabled = galleryCards.length < 2;
+    const prev = $(".lightbox-prev");
+    const next = $(".lightbox-next");
+    if (prev) prev.disabled = disabled;
+    if (next) next.disabled = disabled;
+  }
+
+  function openGalleryLightbox(index) {
+    const lightbox = $("#galleryLightbox");
+    if (!lightbox) return;
+    galleryLastFocus = document.activeElement;
+    galleryCards = $$(".gallery-card");
+    showGalleryImage(index);
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("gallery-lightbox-open");
+    $(".lightbox-close")?.focus();
+  }
+
+  function closeGalleryLightbox() {
+    const lightbox = $("#galleryLightbox");
+    if (!lightbox?.classList.contains("is-open")) return;
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("gallery-lightbox-open");
+    const image = $("#lightboxImage");
+    if (image) image.removeAttribute("src");
+    galleryLastFocus?.focus?.();
+  }
+
+  function initGallery() {
+    const cards = $$(".gallery-card");
+    cards.forEach((card, index) => {
+      card.addEventListener("click", () => openGalleryLightbox(index));
+    });
+    $(".lightbox-close")?.addEventListener("click", closeGalleryLightbox);
+    $(".lightbox-prev")?.addEventListener("click", () => showGalleryImage(galleryCurrentIndex - 1));
+    $(".lightbox-next")?.addEventListener("click", () => showGalleryImage(galleryCurrentIndex + 1));
+
+    const lightbox = $("#galleryLightbox");
+    lightbox?.addEventListener("click", event => {
+      if (event.target === lightbox) closeGalleryLightbox();
+    });
+  }
+
+  /* ---------- EVENT GALLERY FILTER + LIGHTBOX ---------- */
+  let eventCurrentIndex = 0;
+  let eventVisibleCards = [];
+  let eventLastFocus = null;
+
+  function getVisibleEventCards() {
+    return $$(".event-card").filter(card => !card.classList.contains("is-hidden"));
+  }
+
+  function showEventImage(index) {
+    const lightbox = $("#eventLightbox");
+    const imageTarget = $("#eventLightboxImage");
+    const caption = $("#eventLightboxCaption");
+    eventVisibleCards = getVisibleEventCards();
+    if (!lightbox || !imageTarget || !caption || !eventVisibleCards.length) return;
+
+    eventCurrentIndex = (index + eventVisibleCards.length) % eventVisibleCards.length;
+    const card = eventVisibleCards[eventCurrentIndex];
+    const image = $("img", card);
+    if (!image) return;
+
+    imageTarget.src = image.currentSrc || image.src;
+    imageTarget.alt = image.alt || "";
+    caption.textContent = card.dataset.title || image.alt || "";
+    const disabled = eventVisibleCards.length < 2;
+    const prev = $(".event-lightbox-prev");
+    const next = $(".event-lightbox-next");
+    if (prev) prev.disabled = disabled;
+    if (next) next.disabled = disabled;
+  }
+
+  function openEventLightbox(card) {
+    const lightbox = $("#eventLightbox");
+    eventVisibleCards = getVisibleEventCards();
+    eventCurrentIndex = eventVisibleCards.indexOf(card);
+    if (!lightbox || eventCurrentIndex < 0) return;
+
+    eventLastFocus = document.activeElement;
+    showEventImage(eventCurrentIndex);
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("event-lightbox-open");
+    $(".event-lightbox-close")?.focus();
+  }
+
+  function closeEventLightbox() {
+    const lightbox = $("#eventLightbox");
+    if (!lightbox?.classList.contains("is-open")) return;
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("event-lightbox-open");
+    $("#eventLightboxImage")?.removeAttribute("src");
+    eventLastFocus?.focus?.();
+  }
+
+  function initEventGallery() {
+    const cards = $$(".event-card");
+    $$(".event-filter").forEach(filter => {
+      filter.addEventListener("click", () => {
+        const selected = filter.dataset.filter || "all";
+        $$(".event-filter").forEach(button => {
+          const active = button === filter;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+        cards.forEach(card => {
+          const matches = selected === "all" || card.dataset.category === selected;
+          card.classList.toggle("is-hidden", !matches);
+        });
+      });
+    });
+
+    cards.forEach(card => card.addEventListener("click", () => openEventLightbox(card)));
+    $(".event-lightbox-close")?.addEventListener("click", closeEventLightbox);
+    $(".event-lightbox-prev")?.addEventListener("click", () => showEventImage(eventCurrentIndex - 1));
+    $(".event-lightbox-next")?.addEventListener("click", () => showEventImage(eventCurrentIndex + 1));
+
+    const lightbox = $("#eventLightbox");
+    lightbox?.addEventListener("click", event => {
+      if (event.target === lightbox) closeEventLightbox();
+    });
+  }
+
+  document.addEventListener("keydown", event => {
+    if ($("#galleryLightbox")?.classList.contains("is-open")) {
+      if (event.key === "ArrowRight") showGalleryImage(galleryCurrentIndex + 1);
+      if (event.key === "ArrowLeft") showGalleryImage(galleryCurrentIndex - 1);
+    }
+    if ($("#eventLightbox")?.classList.contains("is-open")) {
+      if (event.key === "ArrowRight") showEventImage(eventCurrentIndex + 1);
+      if (event.key === "ArrowLeft") showEventImage(eventCurrentIndex - 1);
+    }
+  });
+
+  /* ---------- DASHBOARD DEMO ---------- */
   const equipment = [
-    { id: "EQ-101", name: "Cordless Drill", category: "Power Tools", price: 350, available: true, icon: "⚒", description: "Compact drill for everyday drilling and fastening.", image: "" },
-    { id: "EQ-102", name: "Angle Grinder", category: "Power Tools", price: 280, available: true, icon: "⚙", description: "Powerful grinder for cutting and surface finishing.", image: "" },
-    { id: "EQ-103", name: "Rotary Hammer", category: "Construction", price: 550, available: false, icon: "🔨", description: "Heavy-duty hammer drill for concrete work.", image: "" },
-    { id: "EQ-104", name: "Safety Kit", category: "Safety", price: 150, available: true, icon: "⛑", description: "Essential protective gear for your worksite.", image: "" },
-    { id: "EQ-105", name: "Ladder — 8 ft", category: "Lifting", price: 220, available: true, icon: "🪜", description: "Stable ladder for indoor and outdoor projects.", image: "" },
-    { id: "EQ-106", name: "Concrete Mixer", category: "Construction", price: 900, available: false, icon: "⚙", description: "Reliable mixer for small and medium projects.", image: "" },
-    { id: "EQ-107", name: "Circular Saw", category: "Power Tools", price: 400, available: true, icon: "🪚", description: "Accurate cutting for wood and sheet materials.", image: "" },
-    { id: "EQ-108", name: "Safety Harness", category: "Safety", price: 180, available: true, icon: "🦺", description: "Fall-protection equipment for elevated work.", image: "" }
+    { id: "EQ-101", name: "Cordless Drill", category: "Power Tools", price: 350, available: true, icon: "⚒", description: "Compact drill for everyday drilling and fastening." },
+    { id: "EQ-102", name: "Angle Grinder", category: "Power Tools", price: 280, available: true, icon: "⚙", description: "Powerful grinder for cutting and surface finishing." },
+    { id: "EQ-103", name: "Rotary Hammer", category: "Construction", price: 550, available: false, icon: "🔨", description: "Heavy-duty hammer drill for concrete work." },
+    { id: "EQ-104", name: "Safety Kit", category: "Safety", price: 150, available: true, icon: "⛑", description: "Essential protective gear for your worksite." },
+    { id: "EQ-105", name: "Ladder — 8 ft", category: "Lifting", price: 220, available: true, icon: "🪜", description: "Stable ladder for indoor and outdoor projects." },
+    { id: "EQ-106", name: "Concrete Mixer", category: "Construction", price: 900, available: false, icon: "⚙", description: "Reliable mixer for small and medium projects." },
+    { id: "EQ-107", name: "Circular Saw", category: "Power Tools", price: 400, available: true, icon: "🪚", description: "Accurate cutting for wood and sheet materials." },
+    { id: "EQ-108", name: "Safety Harness", category: "Safety", price: 180, available: true, icon: "🦺", description: "Fall-protection equipment for elevated work." }
   ];
 
   let bookings = [
@@ -506,17 +369,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const dateFormat = value => {
     if (!value) return "—";
     const date = new Date(`${value}T00:00:00`);
-    if (Number.isNaN(date.getTime())) return value;
-    return date.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+    return Number.isNaN(date.getTime()) ? value :
+      date.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
   };
 
   const shortDate = value => {
     if (!value) return "—";
     const date = new Date(`${value}T00:00:00`);
-    return Number.isNaN(date.getTime()) ? value : date.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+    return Number.isNaN(date.getTime()) ? value :
+      date.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
   };
 
-  const statusClass = status => status.toLowerCase().replace(/\s+/g, "-");
+  const statusClass = status => String(status).toLowerCase().replace(/\s+/g, "-");
   const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   })[char]);
@@ -533,36 +397,28 @@ document.addEventListener("DOMContentLoaded", () => {
   function navigate(viewName) {
     const validViews = ["overview", "equipment", "bookings", "deposits", "support"];
     const target = validViews.includes(viewName) ? viewName : "overview";
-
     $$(".view").forEach(view => view.classList.toggle("active", view.id === `view-${target}`));
     $$(".nav-item[data-view]").forEach(button => button.classList.toggle("active", button.dataset.view === target));
 
-    const title = {
-      overview: "Overview",
-      equipment: "Equipment availability",
-      bookings: "My bookings",
-      deposits: "Security deposits",
-      support: "Help & support"
+    const titles = {
+      overview: "Overview", equipment: "Equipment availability",
+      bookings: "My bookings", deposits: "Security deposits", support: "Help & support"
     };
-    const currentPage = $("#currentPage");
-    if (currentPage) currentPage.textContent = title[target];
+    const pageTitle = $("#currentPage");
+    if (pageTitle) pageTitle.textContent = titles[target];
 
     $("#sidebar")?.classList.remove("open");
     window.scrollTo({ top: 0, behavior: "smooth" });
-
     if (target === "equipment") renderEquipment();
     if (target === "bookings") renderBookings();
     if (target === "deposits") renderDeposits();
   }
 
   function renderEquipmentCard(item) {
-    const imageContent = item.image
-      ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}">`
-      : `<span aria-hidden="true">${item.icon}</span>`;
     return `
       <article class="equipment-card">
         <div class="equipment-image">
-          ${imageContent}
+          <span aria-hidden="true">${item.icon}</span>
           <span class="equipment-category">${escapeHTML(item.category)}</span>
         </div>
         <div class="equipment-card-body">
@@ -592,11 +448,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return matchesSearch && matchesCategory && matchesAvailability;
     });
 
-    const allEquipment = $("#allEquipment");
-    if (allEquipment) allEquipment.innerHTML = filtered.map(renderEquipmentCard).join("");
-
-    const empty = $("#equipmentEmpty");
-    if (empty) empty.classList.toggle("hidden", filtered.length !== 0);
+    const target = $("#allEquipment");
+    if (target) target.innerHTML = filtered.map(renderEquipmentCard).join("");
+    $("#equipmentEmpty")?.classList.toggle("hidden", filtered.length !== 0);
   }
 
   function renderFeaturedEquipment() {
@@ -609,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!target) return;
     target.innerHTML = bookings.slice(0, 4).map(booking => `
       <tr>
-        <td><strong>${escapeHTML(booking.name)}</strong><br><span style="color:var(--muted)">${escapeHTML(booking.id)}</span></td>
+        <td><strong>${escapeHTML(booking.name)}</strong><br><span class="muted">${escapeHTML(booking.id)}</span></td>
         <td>${shortDate(booking.pickup)} – ${shortDate(booking.returned)}</td>
         <td><span class="status ${statusClass(booking.status)}">${escapeHTML(booking.status)}</span></td>
         <td><button class="row-action" data-booking-details="${booking.id}" aria-label="View ${escapeHTML(booking.id)} details">→</button></td>
@@ -620,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = $("#upcomingTimeline");
     if (!target) return;
     const upcoming = [...bookings]
-      .filter(booking => booking.status !== "Completed" && booking.status !== "Cancelled")
+      .filter(booking => !["Completed", "Cancelled"].includes(booking.status))
       .sort((a, b) => a.pickup.localeCompare(b.pickup))
       .slice(0, 3);
 
@@ -628,25 +482,25 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="timeline-item">
         <div class="timeline-icon">${booking.status === "Return due" ? "↩" : "▣"}</div>
         <div>
-          <strong>${escapeHTML(booking.status === "Return due" ? "Return equipment" : booking.status === "On rent" ? "Equipment on rent" : "Pickup scheduled")}</strong>
+          <strong>${booking.status === "Return due" ? "Return equipment" : booking.status === "On rent" ? "Equipment on rent" : "Pickup scheduled"}</strong>
           <p>${escapeHTML(booking.name)}</p>
-          <small>${booking.status === "Return due" ? shortDate(booking.returned) : shortDate(booking.pickup)} · ${escapeHTML(booking.id)}</small>
+          <small>${shortDate(booking.status === "Return due" ? booking.returned : booking.pickup)} · ${escapeHTML(booking.id)}</small>
         </div>
-      </div>`).join("") : `<p class="muted">No upcoming rental activity.</p>`;
+      </div>`).join("") : '<p class="muted">No upcoming rental activity.</p>';
   }
 
   function renderBookings() {
     const search = ($("#bookingSearch")?.value || "").trim().toLowerCase();
     const status = $("#bookingStatusFilter")?.value || "all";
-    const filtered = bookings.filter(booking => {
-      const matchesSearch = `${booking.id} ${booking.name}`.toLowerCase().includes(search);
-      return matchesSearch && (status === "all" || booking.status === status);
-    });
+    const filtered = bookings.filter(booking =>
+      `${booking.id} ${booking.name}`.toLowerCase().includes(search) &&
+      (status === "all" || booking.status === status)
+    );
 
     const target = $("#allBookingsBody");
     if (target) target.innerHTML = filtered.map(booking => `
       <tr>
-        <td><strong>${escapeHTML(booking.id)}</strong><br><span style="color:var(--muted)">${escapeHTML(booking.name)}</span></td>
+        <td><strong>${escapeHTML(booking.id)}</strong><br><span class="muted">${escapeHTML(booking.name)}</span></td>
         <td>${dateFormat(booking.pickup)}</td>
         <td>${dateFormat(booking.returned)}</td>
         <td>${money(booking.deposit)}</td>
@@ -681,7 +535,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateStats() {
-    const active = bookings.filter(booking => booking.status === "On rent" || booking.status === "Return due").length;
+    const active = bookings.filter(booking => ["On rent", "Return due"].includes(booking.status)).length;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const upcoming = bookings.filter(booking => {
@@ -700,8 +554,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!booking) return;
     selectedBookingId = id;
 
-    $("#modalTitle").textContent = booking.name;
-    $("#modalBody").innerHTML = `
+    const title = $("#modalTitle");
+    const body = $("#modalBody");
+    if (title) title.textContent = booking.name;
+    if (body) body.innerHTML = `
       <div class="detail-grid">
         <div class="detail-item"><small>Booking reference</small><strong>${escapeHTML(booking.id)}</strong></div>
         <div class="detail-item"><small>Booking status</small><strong><span class="status ${statusClass(booking.status)}">${escapeHTML(booking.status)}</span></strong></div>
@@ -714,7 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const action = $("#modalAction");
     if (action) {
-      action.textContent = booking.status === "On rent" || booking.status === "Return due"
+      action.textContent = ["On rent", "Return due"].includes(booking.status)
         ? "Mark as returned (demo)" : "Close details";
       action.disabled = false;
     }
@@ -727,17 +583,18 @@ document.addEventListener("DOMContentLoaded", () => {
       showToast("This equipment is currently unavailable.");
       return;
     }
+
     selectedEquipmentId = equipmentId;
-    $("#requestTitle").textContent = "Request equipment";
-    $("#requestEquipmentName").textContent = `${item.name} · ${money(item.price)} per day`;
-    $("#pickupDate").value = "";
-    $("#returnDate").value = "";
-    $("#requestNotes").value = "";
+    if ($("#requestTitle")) $("#requestTitle").textContent = "Request equipment";
+    if ($("#requestEquipmentName")) $("#requestEquipmentName").textContent = `${item.name} · ${money(item.price)} per day`;
+    if ($("#pickupDate")) $("#pickupDate").value = "";
+    if ($("#returnDate")) $("#returnDate").value = "";
+    if ($("#requestNotes")) $("#requestNotes").value = "";
 
     const today = new Date();
     const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
-    $("#pickupDate").min = todayString;
-    $("#returnDate").min = todayString;
+    if ($("#pickupDate")) $("#pickupDate").min = todayString;
+    if ($("#returnDate")) $("#returnDate").min = todayString;
     $("#bookingRequestModal")?.showModal();
   }
 
@@ -748,28 +605,19 @@ document.addEventListener("DOMContentLoaded", () => {
   function submitRequest(event) {
     event.preventDefault();
     const item = equipment.find(entry => entry.id === selectedEquipmentId);
-    const pickup = $("#pickupDate").value;
-    const returned = $("#returnDate").value;
+    const pickup = $("#pickupDate")?.value;
+    const returned = $("#returnDate")?.value;
 
-    if (!item) {
-      showToast("Please select equipment first.");
-      return;
-    }
-    if (pickup < $("#pickupDate").min || returned <= pickup) {
-      showToast("Choose a valid pickup date and a return date after pickup.");
-      return;
+    if (!item) return showToast("Please select equipment first.");
+    if (!pickup || !returned || pickup < $("#pickupDate").min || returned <= pickup) {
+      return showToast("Choose a valid pickup date and a return date after pickup.");
     }
 
-    const newId = `TR-${2051 + bookings.length - 3}`;
+    const numericIds = bookings.map(booking => Number(booking.id.replace("TR-", ""))).filter(Number.isFinite);
+    const newId = `TR-${Math.max(2050, ...numericIds) + 1}`;
     bookings.unshift({
-      id: newId,
-      equipmentId: item.id,
-      name: item.name,
-      pickup,
-      returned,
-      deposit: 2000,
-      depositStatus: "Held",
-      status: "Confirmed",
+      id: newId, equipmentId: item.id, name: item.name, pickup, returned,
+      deposit: 2000, depositStatus: "Held", status: "Confirmed",
       updated: new Date().toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
     });
 
@@ -789,21 +637,15 @@ document.addEventListener("DOMContentLoaded", () => {
     updateStats();
   }
 
-  function attachEvents() {
-    $$(".nav-item[data-view]").forEach(button => {
-      button.addEventListener("click", () => navigate(button.dataset.view));
-    });
+  function initDashboard() {
+    // Navigation
+    $$(".nav-item[data-view]").forEach(button => button.addEventListener("click", () => navigate(button.dataset.view)));
+    $$("[data-go]").forEach(button => button.addEventListener("click", () => navigate(button.dataset.go)));
 
-    $$("[data-go]").forEach(button => {
-      button.addEventListener("click", () => navigate(button.dataset.go));
-    });
-
+    // Equipment / booking actions
     document.addEventListener("click", event => {
       const rentButton = event.target.closest("[data-rent]");
-      if (rentButton) {
-        openRequestModal(rentButton.dataset.rent);
-        return;
-      }
+      if (rentButton) return openRequestModal(rentButton.dataset.rent);
       const detailsButton = event.target.closest("[data-booking-details]");
       if (detailsButton) openBookingDetails(detailsButton.dataset.bookingDetails);
     });
@@ -813,16 +655,12 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#availabilityFilter")?.addEventListener("change", renderEquipment);
     $("#bookingSearch")?.addEventListener("input", renderBookings);
     $("#bookingStatusFilter")?.addEventListener("change", renderBookings);
-
     $("#menuToggle")?.addEventListener("click", () => $("#sidebar")?.classList.toggle("open"));
-    $("#themeToggle")?.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const enabled = document.body.classList.contains("dark-mode");
-      $("#themeToggle").textContent = enabled ? "☀" : "◐";
-      showToast(enabled ? "Dark mode enabled." : "Light mode enabled.");
-    });
 
+    // IMPORTANT: Do not add another listener to #themeToggle here.
+    // The global theme listener above handles all pages consistently.
     $("#notificationBtn")?.addEventListener("click", () => showToast("You're all caught up!"));
+
     $("#closeModal")?.addEventListener("click", () => closeDialog($("#bookingModal")));
     $("#modalCloseBottom")?.addEventListener("click", () => closeDialog($("#bookingModal")));
     $("#closeRequestModal")?.addEventListener("click", () => closeDialog($("#bookingRequestModal")));
@@ -837,11 +675,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     $("#modalAction")?.addEventListener("click", () => {
       const booking = bookings.find(item => item.id === selectedBookingId);
-      if (!booking) {
-        closeDialog($("#bookingModal"));
-        return;
-      }
-      if (booking.status === "On rent" || booking.status === "Return due") {
+      if (!booking) return closeDialog($("#bookingModal"));
+      if (["On rent", "Return due"].includes(booking.status)) {
         booking.status = "Completed";
         booking.depositStatus = "Processing";
         booking.updated = new Date().toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
@@ -853,25 +688,30 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Clicking the dimmed dialog background closes the modal.
     ["bookingModal", "bookingRequestModal"].forEach(id => {
       const dialog = $(`#${id}`);
       dialog?.addEventListener("click", event => {
         if (event.target === dialog) closeDialog(dialog);
       });
     });
-  }
 
-  function init() {
-    attachEvents();
     renderAll();
+
     const dateLabel = $(".welcome-row .eyebrow");
     if (dateLabel) {
-      const today = new Date();
-      dateLabel.textContent = today.toLocaleDateString("en-US", {
+      dateLabel.textContent = new Date().toLocaleDateString("en-US", {
         weekday: "long", month: "long", day: "numeric", year: "numeric"
       }).toUpperCase();
     }
+  }
+
+  /* ---------- INITIALIZE AFTER DOM IS READY ---------- */
+  function init() {
+    setActiveNavigation();
+    initFAQs();
+    initGallery();
+    initEventGallery();
+    initDashboard();
   }
 
   if (document.readyState === "loading") {

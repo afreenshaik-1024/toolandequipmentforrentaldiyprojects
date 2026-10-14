@@ -1,337 +1,118 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("signupForm");
+  const fullName = document.getElementById("fullName");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const password = document.getElementById("password");
+  const confirmPassword = document.getElementById("confirmPassword");
+  const terms = document.getElementById("terms");
+  const message = document.getElementById("message");
 
-    // ========================================
-    // ELEMENTS
-    // ========================================
+  const rtlToggle = document.getElementById("rtlToggle");
+  const directionText = document.getElementById("directionText");
+  const darkModeToggle = document.getElementById("darkModeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  const themeText = document.getElementById("themeText");
 
-    const rtlToggle = document.getElementById("rtlToggle");
-    const directionText = document.getElementById("directionText");
+  function showMessage(text, type = "") {
+    message.textContent = text;
+    message.className = "message";
+    if (type) message.classList.add(type);
+  }
 
-    const darkModeToggle = document.getElementById("darkModeToggle");
-    const themeIcon = document.getElementById("themeIcon");
-    const themeText = document.getElementById("themeText");
+  // Restore saved theme and direction. The controls still work if storage is blocked.
+  try {
+    document.body.classList.toggle("dark-mode", localStorage.getItem("toolnest-theme") === "dark");
+    document.documentElement.dir = localStorage.getItem("toolnest-direction") === "rtl" ? "rtl" : "ltr";
+  } catch (error) {
+    document.documentElement.dir = document.documentElement.dir === "rtl" ? "rtl" : "ltr";
+  }
 
-    const form = document.getElementById("signupForm");
-    const message = document.getElementById("message");
+  function updateThemeButton() {
+    const dark = document.body.classList.contains("dark-mode");
+    themeIcon.textContent = dark ? "☀" : "☾";
+    themeText.textContent = dark ? "Light Mode" : "Dark Mode";
+    darkModeToggle.setAttribute("aria-pressed", String(dark));
+    darkModeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  }
 
-    const fullName = document.getElementById("fullName");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirmPassword");
-    const terms = document.getElementById("terms");
+  function updateDirectionButton() {
+    const rtl = document.documentElement.dir === "rtl";
+    directionText.textContent = rtl ? "LTR" : "RTL";
+    rtlToggle.setAttribute("aria-pressed", String(rtl));
+    rtlToggle.setAttribute("aria-label", rtl ? "Switch to left-to-right layout" : "Switch to right-to-left layout");
+  }
 
+  updateThemeButton();
+  updateDirectionButton();
 
-    // ========================================
-    // LOCAL STORAGE HELPERS
-    // ========================================
+  darkModeToggle.addEventListener("click", function () {
+    const dark = !document.body.classList.contains("dark-mode");
+    document.body.classList.toggle("dark-mode", dark);
+    try { localStorage.setItem("toolnest-theme", dark ? "dark" : "light"); } catch (error) {}
+    updateThemeButton();
+  });
 
-    function readSetting(key, defaultValue) {
-        try {
-            const value = localStorage.getItem(key);
-            return value === null ? defaultValue : value;
-        } catch (error) {
-            return defaultValue;
-        }
-    }
+  rtlToggle.addEventListener("click", function () {
+    const direction = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+    document.documentElement.dir = direction;
+    document.body.classList.toggle("rtl-mode", direction === "rtl");
+    try { localStorage.setItem("toolnest-direction", direction); } catch (error) {}
+    updateDirectionButton();
+  });
 
-    function saveSetting(key, value) {
-        try {
-            localStorage.setItem(key, value);
-        } catch (error) {
-            // The page remains functional without storage.
-        }
-    }
-
-
-    // ========================================
-    // DARK MODE
-    // ========================================
-
-    function updateTheme() {
-        const isDark = document.body.classList.contains("dark-mode");
-
-        if (themeIcon) {
-            themeIcon.textContent = isDark ? "☀" : "☾";
-        }
-
-        if (themeText) {
-            themeText.textContent = isDark ? "Light Mode" : "Dark Mode";
-        }
-
-        if (darkModeToggle) {
-            darkModeToggle.setAttribute(
-                "aria-label",
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-            );
-        }
-    }
-
-    // Restore saved theme.
-    if (readSetting("toolnest-theme", "light") === "dark") {
-        document.body.classList.add("dark-mode");
-    }
-
-    updateTheme();
-
-    // Toggle theme.
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-
-            const isDark = document.body.classList.contains("dark-mode");
-
-            saveSetting(
-                "toolnest-theme",
-                isDark ? "dark" : "light"
-            );
-
-            updateTheme();
-        });
-    }
-
-
-    // ========================================
-    // RTL / LTR
-    // ========================================
-
-    function updateDirection() {
-        const isRTL = document.body.classList.contains("rtl-mode");
-
-        document.documentElement.setAttribute(
-            "dir",
-            isRTL ? "rtl" : "ltr"
-        );
-
-        if (directionText) {
-            directionText.textContent = isRTL ? "LTR" : "RTL";
-        }
-
-        if (rtlToggle) {
-            rtlToggle.setAttribute(
-                "aria-label",
-                isRTL
-                    ? "Switch to left-to-right layout"
-                    : "Switch to right-to-left layout"
-            );
-        }
-    }
-
-    // Restore saved direction.
-    if (readSetting("toolnest-direction", "ltr") === "rtl") {
-        document.body.classList.add("rtl-mode");
-    }
-
-    updateDirection();
-
-    // Toggle direction.
-    if (rtlToggle) {
-        rtlToggle.addEventListener("click", function () {
-            document.body.classList.toggle("rtl-mode");
-
-            const isRTL = document.body.classList.contains("rtl-mode");
-
-            saveSetting(
-                "toolnest-direction",
-                isRTL ? "rtl" : "ltr"
-            );
-
-            updateDirection();
-        });
-    }
-
-
-    // ========================================
-    // SHOW / HIDE PASSWORD
-    // ========================================
-
-    document.querySelectorAll(".show-password").forEach(function (button) {
-
-        button.addEventListener("click", function () {
-            const targetId = button.getAttribute("data-target");
-            const input = document.getElementById(targetId);
-
-            if (!input) {
-                return;
-            }
-
-            const shouldShow = input.type === "password";
-
-            input.type = shouldShow ? "text" : "password";
-            button.textContent = shouldShow ? "Hide" : "Show";
-
-            button.setAttribute(
-                "aria-label",
-                shouldShow ? "Hide password" : "Show password"
-            );
-
-            button.setAttribute(
-                "aria-pressed",
-                shouldShow ? "true" : "false"
-            );
-        });
-
+  // Show/hide both password fields.
+  document.querySelectorAll(".show-password").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const target = document.getElementById(button.dataset.target);
+      if (!target) return;
+      const show = target.type === "password";
+      target.type = show ? "text" : "password";
+      button.textContent = show ? "Hide" : "Show";
+      button.setAttribute("aria-pressed", String(show));
+      button.setAttribute("aria-label", show ? "Hide password" : "Show password");
     });
+  });
 
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    showMessage("");
 
-    // ========================================
-    // VALIDATION HELPERS
-    // ========================================
+    const nameValue = fullName.value.trim();
+    const emailValue = email.value.trim();
+    const phoneValue = phone.value.trim();
 
-    function clearErrors() {
-        document.querySelectorAll("#signupForm input").forEach(function (input) {
-            input.classList.remove("invalid");
-        });
+    if (nameValue.length < 2) {
+      showMessage("Please enter your full name (at least 2 characters).", "error");
+      fullName.focus();
+      return;
+    }
+    if (!emailValue || !email.validity.valid) {
+      showMessage("Please enter a valid email address.", "error");
+      email.focus();
+      return;
+    }
+    if (!phoneValue || phoneValue.replace(/\D/g, "").length < 7) {
+      showMessage("Please enter a valid phone number.", "error");
+      phone.focus();
+      return;
+    }
+    if (password.value.length < 8) {
+      showMessage("Password must contain at least 8 characters.", "error");
+      password.focus();
+      return;
+    }
+    if (password.value !== confirmPassword.value) {
+      showMessage("Passwords do not match. Please check them.", "error");
+      confirmPassword.focus();
+      return;
+    }
+    if (!terms.checked) {
+      showMessage("Please agree to the Terms of Service and Privacy Policy.", "error");
+      terms.focus();
+      return;
     }
 
-    function markInvalid(input) {
-        if (input) {
-            input.classList.add("invalid");
-            input.focus();
-        }
-    }
-
-    function showMessage(text, type) {
-        if (!message) {
-            return;
-        }
-
-        message.textContent = text;
-        message.className = "message";
-
-        if (type) {
-            message.classList.add(type);
-        }
-    }
-
-
-    // ========================================
-    // LIVE PASSWORD MATCHING
-    // ========================================
-
-    function checkPasswordMatch() {
-        if (!password || !confirmPassword) {
-            return true;
-        }
-
-        if (
-            confirmPassword.value.length > 0 &&
-            password.value !== confirmPassword.value
-        ) {
-            confirmPassword.classList.add("invalid");
-            return false;
-        }
-
-        confirmPassword.classList.remove("invalid");
-        return true;
-    }
-
-    if (password) {
-        password.addEventListener("input", checkPasswordMatch);
-    }
-
-    if (confirmPassword) {
-        confirmPassword.addEventListener("input", checkPasswordMatch);
-    }
-
-
-    // ========================================
-    // SIGNUP FORM VALIDATION
-    // ========================================
-
-    if (form) {
-        form.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-            clearErrors();
-            showMessage("", "");
-
-            // Full name
-            const nameValue = fullName.value.trim();
-
-            if (nameValue.length < 2) {
-                showMessage(
-                    "Please enter your full name.",
-                    "error"
-                );
-
-                markInvalid(fullName);
-                return;
-            }
-
-            // Email
-            const emailValue = email.value.trim();
-
-            if (!emailValue || !email.checkValidity()) {
-                showMessage(
-                    "Please enter a valid email address.",
-                    "error"
-                );
-
-                markInvalid(email);
-                return;
-            }
-
-            // Phone
-            const phoneValue = phone.value.trim();
-            const phoneDigits = phoneValue.replace(/\D/g, "");
-
-            if (
-                !/^[0-9+\s()-]+$/.test(phoneValue) ||
-                phoneDigits.length < 7 ||
-                phoneDigits.length > 15
-            ) {
-                showMessage(
-                    "Please enter a valid phone number.",
-                    "error"
-                );
-
-                markInvalid(phone);
-                return;
-            }
-
-            // Password
-            if (password.value.length < 8) {
-                showMessage(
-                    "Password must contain at least 8 characters.",
-                    "error"
-                );
-
-                markInvalid(password);
-                return;
-            }
-
-            // Confirm password
-            if (password.value !== confirmPassword.value) {
-                showMessage(
-                    "Passwords do not match.",
-                    "error"
-                );
-
-                markInvalid(confirmPassword);
-                return;
-            }
-
-            // Terms and privacy
-            if (!terms.checked) {
-                showMessage(
-                    "Please accept the Terms of Service and Privacy Policy.",
-                    "error"
-                );
-
-                terms.focus();
-                return;
-            }
-
-            // Frontend validation passed.
-            // Actual account creation requires a backend.
-            showMessage(
-                "All fields are valid! Backend connection is required to create your account.",
-                "success"
-            );
-
-        });
-    }
-
+    showMessage("Form validated! Connect your registration backend to create the account.", "success");
+  });
 });

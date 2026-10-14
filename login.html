@@ -1,187 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | ToolNest Rentals</title>
-    <link rel="stylesheet" href="login.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#70452f">
+  <title>Login | ToolNest Rentals</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <script src="login.js" defer></script>
 </head>
 <body>
-
-<main class="login-page">
-
-    <!-- Left Visual Section -->
-    <section class="login-visual">
-
-        <a href="index.html" class="logo">
-            <img src="images/logo.png"
-                 alt="ToolNest Logo"
-                 class="logo-image">
-
-            <div>
-                <div class="brand-name">Tool<span>Nest</span></div>
-                <div class="tagline">Rent Tools • Build Dreams</div>
-            </div>
-        </a>
-
-        <div class="visual-content">
-            <span class="eyebrow">RENT SMARTER</span>
-
-            <h1>The right tools.<br>Right when you<br>need them.</h1>
-
-            <p>
-                Manage your equipment rentals, track bookings,
-                and keep everything organized in one place.
-            </p>
-
-            <div class="feature-list">
-                <div class="feature">
-                    <span class="feature-icon">✓</span>
-                    Easy booking management
-                </div>
-
-                <div class="feature">
-                    <span class="feature-icon">✓</span>
-                    Secure deposit tracking
-                </div>
-
-                <div class="feature">
-                    <span class="feature-icon">✓</span>
-                    Quick pickup and returns
-                </div>
-            </div>
+  <main class="login-page">
+    <section class="login-visual" aria-label="ToolNest introduction">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="ToolNest Logo" class="logo-image" onerror="this.style.display='none'">
+        <span class="logo-copy"><span class="brand-name">Tool<span>Nest</span></span><span class="tagline">Rent Tools • Build Dreams</span></span>
+      </a>
+      <div class="visual-content">
+        <span class="eyebrow">RENT SMARTER</span>
+        <h1>The right tools.<br>Right when you<br>need them.</h1>
+        <p>Manage your equipment rentals, track bookings, and keep everything organized in one place.</p>
+        <div class="feature-list">
+          <div class="feature"><span class="feature-icon">✓</span>Easy booking management</div>
+          <div class="feature"><span class="feature-icon">✓</span>Secure deposit tracking</div>
+          <div class="feature"><span class="feature-icon">✓</span>Quick pickup and returns</div>
         </div>
-
-        <div class="visual-footer">
-            <span>Built for your next big project.</span>
-            <span>© 2026 ToolNest</span>
-        </div>
-
+      </div>
+      <div class="visual-footer"><span>Built for your next big project.</span><span>© 2026 ToolNest</span></div>
     </section>
 
-    <!-- Right Login Section -->
-    <section class="login-panel">
-
-        <!-- Theme and Direction Buttons -->
-        <div class="login-settings">
-
-            <button type="button"
-                    id="rtlToggle"
-                    class="settings-btn"
-                    aria-label="Switch to right-to-left layout">
-                <span>⇄</span>
-                
-            </button>
-
-            <button type="button"
-                    id="darkModeToggle"
-                    class="settings-btn"
-                    aria-label="Toggle dark mode">
-                <span id="themeIcon">🌙</span
-            </button>
-
-        </div>
-
-        <!-- Mobile Brand -->
-        <div class="mobile-brand">
-            <div class="brand-icon">T</div>
-            <span>ToolNest</span>
-        </div>
-
-        <!-- Login Card -->
-        <div class="login-card">
-
-            <div class="welcome-icon">↗</div>
-
-            <p class="small-heading">RENTER PORTAL</p>
-            <h2>Welcome back</h2>
-
-            <p class="subtitle">
-                Sign in to manage your rentals and bookings.
-            </p>
-
-            <form id="loginForm">
-
-                <div class="form-group">
-                    <label for="email">Email address</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="you@example.com"
-                        autocomplete="email"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-
-                    <div class="password-box">
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Enter your password"
-                            autocomplete="current-password"
-                            required
-                        >
-
-                        <button
-                            type="button"
-                            id="togglePassword"
-                            class="show-password"
-                            aria-label="Show password">
-                            Show
-                        </button>
-                    </div>
-                </div>
-
-                <div class="form-options">
-
-                    <label class="remember">
-                        <input type="checkbox" id="remember" name="remember">
-                        <span>Remember me</span>
-                    </label>
-
-                    <a href="#" id="forgotLink">Forgot password?</a>
-
-                </div>
-
-                <button type="submit" class="login-button">
-                    Sign In <span>→</span>
-                </button>
-
-                <p id="message" class="message" role="status"></p>
-
-            </form>
-
-            <div class="divider">
-                <span>SECURE RENTAL ACCESS</span>
-            </div>
-
-            <p class="signup-text">
-                Don't have an account?
-                <a href="signup.html">Create account</a>
-            </p>
-
-            <p class="help-text">
-                Need help?
-                <a href="contact.html">Contact our team</a>
-            </p>
-
-        </div>
-
+    <section class="login-panel" aria-label="Renter login">
+      <div class="login-settings">
+        <button type="button" id="rtlToggle" class="settings-btn" aria-label="Switch to right-to-left layout" aria-pressed="false" title="Switch direction"><span aria-hidden="true">⇄</span><span class="settings-label" id="directionLabel"></span></button>
+        <button type="button" id="darkModeToggle" class="settings-btn" aria-label="Switch to dark mode" aria-pressed="false" title="Dark mode"><span id="themeIcon" aria-hidden="true">☾</span><span class="settings-label" id="themeLabel"></span></button>
+      </div>
+      <div class="mobile-brand"><span class="brand-icon">T</span><span>ToolNest</span></div>
+      <div class="login-card">
+        <div class="welcome-icon" aria-hidden="true">↗</div>
+        <p class="small-heading">RENTER PORTAL</p>
+        <h2>Welcome back</h2>
+        <p class="subtitle">Sign in to manage your rentals and bookings.</p>
+        <form id="loginForm" novalidate>
+          <div class="form-group"><label for="email">Email address</label><input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required></div>
+          <div class="form-group"><label for="password">Password</label><div class="password-box"><input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" minlength="6" required><button type="button" id="togglePassword" class="show-password" aria-label="Show password" aria-pressed="false">Show</button></div></div>
+          <div class="form-options"><label class="remember"><input type="checkbox" id="remember" name="remember"><span>Remember me</span></label><a href="#" id="forgotLink">Forgot password?</a></div>
+          <button type="submit" class="login-button">Sign In <span aria-hidden="true">→</span></button>
+          <p id="message" class="message" role="status" aria-live="polite"></p>
+        </form>
+        <div class="divider"><span>SECURE RENTAL ACCESS</span></div>
+        <p class="signup-text">Don't have an account? <a href="signup.html">Create account</a></p>
+        <p class="help-text">Need help? <a href="contact.html">Contact our team</a></p>
+      </div>
     </section>
-
-</main>
-
-<script src="login.js"></script>
+  </main>
 </body>
 </html>

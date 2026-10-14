@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ToolNest | Tool & Equipment Rental</title>
+<title>Tool & Equipment Rental for DIY projects</title>
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,64 +20,132 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <header class="site-header">
     <nav class="navbar container">
 
-        <a href="#" class="logo">
-            <img src="images/logo.png"
-                 alt="ToolNest Logo"
-                 class="logo-image">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img
+                src="images/logo.png"
+                alt="ToolNest Logo"
+                class="logo-image"
+            >
 
-            <div>
-                <div class="brand-name">Tool<span>Nest</span></div>
-                <div class="tagline">Rent Tools • Build Dreams</div>
+            <div class="logo-text">
+                <div class="brand-name">
+                    Tool<span>Nest</span>
+                </div>
+                <div class="tagline">
+                    Rent Tools • Build Dreams
+                </div>
             </div>
         </a>
 
+        <!-- Navigation Menu -->
         <div class="nav-menu" id="navMenu">
             <ul class="nav-links">
 
+                <!-- Home Dropdown -->
                 <li class="nav-item dropdown">
-                    <button class="dropdown-toggle"
-                            id="homeDropdown"
-                            aria-expanded="false"
-                            type="button">
-                        Home <i class="fa-solid fa-chevron-down"></i>
+                    <button
+                        class="dropdown-toggle"
+                        id="homeDropdown"
+                        aria-expanded="false"
+                        aria-controls="homeDropdownMenu"
+                        type="button"
+                    >
+                        Home
+                        <i class="fa-solid fa-chevron-down"></i>
                     </button>
 
-                    <ul class="dropdown-menu" id="homeDropdownMenu">
-                        <li><a href="index.html">Home 1</a></li>
-                        <li><a href="home2.html">Home 2</a></li>
+                    <ul
+                        class="dropdown-menu"
+                        id="homeDropdownMenu"
+                    >
+                        <li>
+                            <a href="index.html">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="home2.html">Home 2</a>
+                        </li>
                     </ul>
                 </li>
 
-                <li class="nav-item"><a href="about.html">About Us</a></li>
-                <li class="nav-item"><a href="pricing.html">Pricing</a></li>
-                <li class="nav-item"><a href="catalogue.html">Catalogue</a></li>
-                <li class="nav-item"><a href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a href="contact.html">Contact</a></li>
-                <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+                <!-- Main Navigation Links -->
+                <li class="nav-item">
+                    <a href="about.html">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="pricing.html">Pricing</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="catalogue.html">Catalogue</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="gallery.html">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+
+                <!-- Login: Mobile Hamburger Menu Only -->
+                <li class="nav-item mobile-login-item">
+                    <a href="login.html" class="login-btn">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span>Login</span>
+                    </a>
+                </li>
 
             </ul>
         </div>
 
+        <!-- Header Actions -->
         <div class="nav-actions">
 
-            <button class="icon-btn" id="rtlToggle"
-                    title="Toggle RTL" aria-label="Toggle RTL">
+            <!-- RTL Toggle -->
+            <button
+                class="icon-btn"
+                id="rtlToggle"
+                type="button"
+                title="Toggle RTL"
+                aria-label="Toggle right-to-left layout"
+            >
                 <i class="fa-solid fa-right-left"></i>
             </button>
 
-            <button class="icon-btn" id="themeToggle"
-                    title="Toggle theme" aria-label="Toggle theme">
+            <!-- Dark / Light Mode Toggle -->
+            <button
+                class="icon-btn"
+                id="themeToggle"
+                type="button"
+                title="Toggle theme"
+                aria-label="Toggle dark and light mode"
+            >
                 <i class="fa-solid fa-moon" id="themeIcon"></i>
             </button>
 
-            <a href="login.html" class="login-btn">
+            <!-- Login: Desktop Only -->
+            <a href="login.html" class="login-btn desktop-login-btn">
+                <i class="fa-solid fa-right-to-bracket"></i>
                 <span>Login</span>
             </a>
 
         </div>
 
-        <button class="mobile-menu-btn" id="mobileMenuBtn"
-                aria-label="Toggle navigation" aria-expanded="false">
+        <!-- Mobile Hamburger Button -->
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="navMenu"
+            aria-expanded="false"
+        >
             <i class="fa-solid fa-bars"></i>
         </button>
 

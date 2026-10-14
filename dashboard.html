@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#70452f">
-  <title>ToolRent | Renter Dashboard</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>ToolNest | Renter Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dashboard.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-     <a href="index.html" class="logo">
-            <img src="images/logo.png"
-                 alt="ToolNest Logo"
-                 class="logo-image">
-
-            <div>
-                <div class="brand-name">Tool<span>Nest</span></div>
-                <div class="tagline">Rent Tools • Build Dreams</div>
-            </div>
-        </a>
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="ToolNest Logo" class="logo-image" onerror="this.style.display='none'">
+        <div>
+          <div class="brand-name">Tool<span>Nest</span></div>
+          <div class="tagline">Rent Tools • Build Dreams</div>
+        </div>
+      </a>
 
       <p class="nav-label">WORKSPACE</p>
       <nav class="side-nav" aria-label="Main navigation">
@@ -34,8 +32,8 @@
       </nav>
 
       <p class="nav-label">ACCOUNT</p>
-      <nav class="side-nav">
-        <button class="nav-item" data-view="support"><span class="nav-icon">?</span>Help & support</button>
+      <nav class="side-nav" aria-label="Account navigation">
+        <button class="nav-item" data-view="support"><span class="nav-icon">?</span>Help &amp; support</button>
       </nav>
 
       <div class="sidebar-bottom">
@@ -45,18 +43,20 @@
           <p>Our team can help with your rental.</p>
           <a href="contact.html">Contact support <span>→</span></a>
         </div>
-        <small class="sidebar-foot">© 2026 ToolRent</small>
+        <small class="sidebar-foot">© 2026 ToolNest</small>
       </div>
     </aside>
 
     <main class="main-area">
       <header class="topbar">
-        <button class="icon-button menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <button class="icon-button menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="currentPage">Overview</strong></div>
         <div class="topbar-actions">
-          <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+          <button class="control-toggle rtl-toggle" id="rtlToggle" type="button" aria-label="Toggle right-to-left layout" aria-pressed="false" title="Toggle RTL layout">
+            <span class="toggle-icon">⇄</span><span class="toggle-label"></span>
+          </button>
+          <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Light / dark mode"><span id="themeIcon">☾</span></button>
           <button class="icon-button notification-btn" id="notificationBtn" aria-label="Notifications" title="Notifications">♧<i></i></button>
-          <div class="top-avatar" title="Ahmad Raza">AR</div>
         </div>
       </header>
 
@@ -64,7 +64,7 @@
         <section class="view active" id="view-overview">
           <div class="welcome-row">
             <div>
-              <p class="eyebrow">SUNDAY, OCTOBER 11, 2026</p>
+              <p class="eyebrow" id="todayLabel">YOUR RENTAL WORKSPACE</p>
               <h1>Welcome back <span class="wave">✦</span></h1>
               <p class="muted">Here’s what’s happening with your equipment rentals.</p>
             </div>
@@ -73,7 +73,7 @@
 
           <div class="stats-grid">
             <article class="stat-card"><div class="stat-top"><span>Active bookings</span><span class="stat-icon brown">▣</span></div><div class="stat-value" id="activeBookingsCount">2</div><div class="stat-note"><span class="dot green"></span>Currently on rent</div></article>
-            <article class="stat-card"><div class="stat-top"><span>Upcoming pickups</span><span class="stat-icon orange">↗</span></div><div class="stat-value" id="upcomingPickupsCount">1</div><div class="stat-note">Next pickup <strong>Oct 15</strong></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Upcoming pickups</span><span class="stat-icon orange">↗</span></div><div class="stat-value" id="upcomingPickupsCount">1</div><div class="stat-note">Next pickup <strong id="nextPickupLabel">Oct 15</strong></div></article>
             <article class="stat-card"><div class="stat-top"><span>Returns due</span><span class="stat-icon blue">↩</span></div><div class="stat-value" id="returnsDueCount">1</div><div class="stat-note"><span class="dot orange-dot"></span>Plan your return</div></article>
             <article class="stat-card"><div class="stat-top"><span>Deposit balance</span><span class="stat-icon green-bg">◉</span></div><div class="stat-value" id="depositTotal">₹8,000</div><div class="stat-note">Across your bookings</div></article>
           </div>
@@ -81,12 +81,7 @@
           <div class="content-grid">
             <section class="panel bookings-panel">
               <div class="panel-heading"><div><h2>Recent bookings</h2><p>Track your equipment reservations</p></div><button class="text-button" data-go="bookings">View all →</button></div>
-              <div class="table-wrap">
-                <table>
-                  <thead><tr><th>Equipment</th><th>Rental period</th><th>Status</th><th></th></tr></thead>
-                  <tbody id="recentBookingsBody"></tbody>
-                </table>
-              </div>
+              <div class="table-wrap"><table><thead><tr><th>Equipment</th><th>Rental period</th><th>Status</th><th></th></tr></thead><tbody id="recentBookingsBody"></tbody></table></div>
             </section>
             <section class="panel schedule-panel">
               <div class="panel-heading"><div><h2>Next up</h2><p>Your upcoming rental activity</p></div><span class="calendar-symbol">▦</span></div>
@@ -119,34 +114,24 @@
             <select id="bookingStatusFilter" aria-label="Filter bookings"><option value="all">All statuses</option><option value="Confirmed">Confirmed</option><option value="On rent">On rent</option><option value="Return due">Return due</option><option value="Completed">Completed</option></select>
           </div>
           <section class="panel">
-            <div class="table-wrap">
-              <table class="bookings-table">
-                <thead><tr><th>Booking / Equipment</th><th>Pickup</th><th>Return</th><th>Deposit</th><th>Status</th><th>Action</th></tr></thead>
-                <tbody id="allBookingsBody"></tbody>
-              </table>
-            </div>
+            <div class="table-wrap"><table class="bookings-table"><thead><tr><th>Booking / Equipment</th><th>Pickup</th><th>Return</th><th>Deposit</th><th>Status</th><th>Action</th></tr></thead><tbody id="allBookingsBody"></tbody></table></div>
             <p class="empty-state hidden" id="bookingsEmpty">No bookings found.</p>
           </section>
         </section>
 
         <section class="view" id="view-deposits">
-          <div class="page-title-row"><div><p class="eyebrow">PAYMENTS & REFUNDS</p><h1>Security deposits</h1><p class="muted">Review deposit amounts and their current status.</p></div></div>
+          <div class="page-title-row"><div><p class="eyebrow">PAYMENTS &amp; REFUNDS</p><h1>Security deposits</h1><p class="muted">Review deposit amounts and their current status.</p></div></div>
           <div class="deposit-summary-grid">
             <article class="stat-card"><div class="stat-top"><span>Total deposits</span><span class="stat-icon brown">₹</span></div><div class="stat-value" id="depositSummaryTotal">₹8,000</div><div class="stat-note">Across all listed bookings</div></article>
             <article class="stat-card"><div class="stat-top"><span>Held securely</span><span class="stat-icon orange">◉</span></div><div class="stat-value" id="depositHeld">₹6,000</div><div class="stat-note">For active rentals</div></article>
             <article class="stat-card"><div class="stat-top"><span>Refund processing</span><span class="stat-icon blue">↻</span></div><div class="stat-value" id="depositProcessing">₹2,000</div><div class="stat-note">Demo status, not a real payment</div></article>
           </div>
-          <section class="panel">
-            <div class="panel-heading"><div><h2>Deposit history</h2><p>Deposit status by booking</p></div></div>
-            <div class="table-wrap">
-              <table><thead><tr><th>Booking</th><th>Equipment</th><th>Deposit amount</th><th>Status</th><th>Last updated</th></tr></thead><tbody id="depositHistoryBody"></tbody></table>
-            </div>
-          </section>
+          <section class="panel"><div class="panel-heading"><div><h2>Deposit history</h2><p>Deposit status by booking</p></div></div><div class="table-wrap"><table><thead><tr><th>Booking</th><th>Equipment</th><th>Deposit amount</th><th>Status</th><th>Last updated</th></tr></thead><tbody id="depositHistoryBody"></tbody></table></div></section>
           <div class="notice"><span>ⓘ</span><p><strong>About security deposits</strong><br>Deposit release and refund timing depend on the rental agreement and equipment inspection. This demo dashboard does not process payments or issue refunds.</p></div>
         </section>
 
         <section class="view" id="view-support">
-          <div class="page-title-row"><div><p class="eyebrow">WE'RE HERE TO HELP</p><h1>Help & support</h1><p class="muted">Need help with a booking, pickup, return or deposit?</p></div></div>
+          <div class="page-title-row"><div><p class="eyebrow">WE'RE HERE TO HELP</p><h1>Help &amp; support</h1><p class="muted">Need help with a booking, pickup, return or deposit?</p></div></div>
           <div class="support-grid">
             <article class="support-card"><span class="support-card-icon">☎</span><h2>Call our team</h2><p>Speak with the rental support team about your booking.</p><a href="tel:+910000000000">Add your support number →</a></article>
             <article class="support-card"><span class="support-card-icon">✉</span><h2>Email support</h2><p>Send us your question and include your booking reference.</p><a href="mailto:support@example.com">support@example.com →</a></article>
@@ -154,7 +139,7 @@
           </div>
         </section>
 
-        <footer class="page-footer"><span>© 2026 ToolRent. Demo renter dashboard.</span><span>Need assistance? <a href="contact.html">Contact support</a></span></footer>
+        <footer class="page-footer"><span>© 2026 ToolNest. Demo renter dashboard.</span><span>Need assistance? <a href="contact.html">Contact support</a></span></footer>
       </div>
     </main>
   </div>
@@ -180,7 +165,5 @@
       <div class="modal-actions"><button type="button" class="btn btn-light" id="cancelRequest">Cancel</button><button type="submit" class="btn btn-primary">Submit request</button></div>
     </form>
   </dialog>
-
-  <script src="script.js"></script>
 </body>
 </html>

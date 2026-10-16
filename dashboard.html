@@ -38,11 +38,10 @@
 
       <div class="sidebar-bottom">
         <div class="help-card">
-          <div class="help-icon">✦</div>
-          <strong>Need a hand?</strong>
-          <p>Our team can help with your rental.</p>
-          <a href="contact.html">Contact support <span>→</span></a>
-        </div>
+<button class="sidebar-logout" type="button" data-logout>
+  <span class="sidebar-logout-icon" aria-hidden="true">↪</span>
+  <span>Logout</span>
+</button>
         <small class="sidebar-foot">© 2026 ToolNest</small>
       </div>
     </aside>
@@ -51,13 +50,68 @@
       <header class="topbar">
         <button class="icon-button menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="currentPage">Overview</strong></div>
-        <div class="topbar-actions">
-          <button class="control-toggle rtl-toggle" id="rtlToggle" type="button" aria-label="Toggle right-to-left layout" aria-pressed="false" title="Toggle RTL layout">
-            <span class="toggle-icon">⇄</span><span class="toggle-label"></span>
-          </button>
-          <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Light / dark mode"><span id="themeIcon">☾</span></button>
-          <button class="icon-button notification-btn" id="notificationBtn" aria-label="Notifications" title="Notifications">♧<i></i></button>
+<div class="topbar-actions">
+
+  <button class="control-toggle rtl-toggle"
+    id="rtlToggle" type="button"
+    aria-label="Toggle right-to-left layout"
+    aria-pressed="false" title="Toggle RTL layout">
+    <span class="toggle-icon">⇄</span>
+    <span class="toggle-label"></span>
+  </button>
+
+  <button class="icon-button theme-toggle"
+    id="themeToggle" type="button"
+    aria-label="Switch to dark mode"
+    aria-pressed="false" title="Light / dark mode">
+    <span id="themeIcon">☾</span>
+  </button>
+
+  <button class="icon-button notification-btn"
+    id="notificationBtn" type="button"
+    aria-label="Notifications" title="Notifications">
+    ♧<i></i>
+  </button>
+
+  <!-- Profile Dropdown -->
+  <div class="profile-wrapper" id="profileWrapper">
+
+    <button class="profile-trigger" id="profileTrigger"
+      type="button" aria-label="Open profile menu"
+      aria-expanded="false" aria-controls="profileDropdown">
+
+      <span class="profile-avatar" aria-hidden="true">AS</span>
+    </button>
+
+    <div class="profile-dropdown" id="profileDropdown" hidden>
+
+      <div class="profile-user-info">
+        <span class="profile-avatar profile-avatar-large"
+          aria-hidden="true">AS</span>
+
+        <div class="profile-user-text">
+          <strong id="profileName">Shaik Afreen</strong>
+          <span id="profileEmail">Afreen@example.com</span>
         </div>
+      </div>
+
+      <div class="profile-menu-divider"></div>
+
+      <a href="profile.html" class="profile-menu-item">
+        <span aria-hidden="true">♙</span>
+        My Profile
+      </a>
+
+      <button class="profile-menu-item profile-logout"
+        type="button" data-logout>
+        <span aria-hidden="true">↪</span>
+        Logout
+      </button>
+
+    </div>
+  </div>
+
+</div>
       </header>
 
       <div class="page-content">
@@ -143,6 +197,31 @@
       </div>
     </main>
   </div>
+
+<!-- Logout Confirmation -->
+<dialog class="logout-dialog" id="logoutDialog"
+  aria-labelledby="logoutTitle"
+  aria-describedby="logoutDescription">
+
+  <h2 id="logoutTitle">Do you want to logout?</h2>
+
+  <p id="logoutDescription">
+    Are you sure you want to log out of your ToolNest account?
+  </p>
+
+  <div class="logout-dialog-actions">
+    <button type="button" class="btn btn-light"
+      id="cancelLogout">
+      No, Stay
+    </button>
+
+    <button type="button" class="btn btn-primary"
+      id="confirmLogout">
+      Yes, Logout
+    </button>
+  </div>
+
+</dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

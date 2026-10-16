@@ -91,9 +91,6 @@ button {
     color: var(--primary-light);
     white-space: nowrap;
 }
-
-/* Navigation */
-
 .nav-menu {
     display: flex;
     align-items: center;
@@ -162,9 +159,6 @@ button {
     background: var(--yellow);
     color: var(--navy);
 }
-
-/* Right actions */
-
 .nav-actions {
     display: flex;
     align-items: center;
@@ -214,9 +208,6 @@ button {
     background: transparent;
     color: white;
 }
-
-/* ============== MAIN CONTENT ============== */
-
 .demo-section {
     min-height: 320px;
     padding: 65px 0;
@@ -282,8 +273,6 @@ button {
     border: 1px solid var(--navy);
     color: var(--navy);
 }
-
-/* ============== FOOTER ============== */
 
 .site-footer {
     background: var(--navy);
@@ -404,8 +393,6 @@ button {
     color: var(--yellow);
 }
 
-/* ============== LIGHT MODE ============== */
-
 body.light-mode {
     --navy: var(--primary);
     --navy-light: var(--primary-dark);
@@ -440,8 +427,6 @@ body.light-mode .mobile-menu-btn {
 body.light-mode .dropdown-menu a {
     color: #FFFFFF;
 }
-
-/* ============== RESPONSIVE ============== */
 
 @media (max-width: 1050px) {
     .navbar {
@@ -597,8 +582,6 @@ body.light-mode .dropdown-menu a {
     }
 }
 
-/* ================= HERO SECTION ================= */
-
 .hero-section {
     --hero-text: #ffffff;
     --hero-muted: #F0E5D9;
@@ -621,8 +604,6 @@ body.light-mode .dropdown-menu a {
     overflow: hidden;
     color: var(--hero-text);
 }
-
-/* Navy overlay */
 
 .hero-overlay {
     position: absolute;
@@ -760,21 +741,15 @@ body.light-mode .dropdown-menu a {
     color: #DFA477;
 }
 
-/* ================= DARK MODE ================= */
-
 html[data-theme="dark"] .hero-section {
     --hero-text: #FCF8F3;
     --hero-muted: #E8D9CA;
 }
 
-/* ================= LIGHT MODE ================= */
-
 html[data-theme="light"] .hero-section {
     --hero-text: #ffffff;
     --hero-muted: #F0E5D9;
 }
-
-/* ================= 1024px TABLET ================= */
 
 @media (max-width: 1024px) {
     .hero-section {
@@ -805,8 +780,6 @@ html[data-theme="light"] .hero-section {
         );
     }
 }
-
-/* ================= 768px TABLET ================= */
 
 @media (max-width: 768px) {
     .hero-section {
@@ -840,9 +813,6 @@ html[data-theme="light"] .hero-section {
         gap: 14px 20px;
     }
 }
-
-/* ================= MOBILE ================= */
-
 @media (max-width: 480px) {
     .hero-section {
         min-height: 570px;
@@ -882,15 +852,11 @@ html[data-theme="light"] .hero-section {
     }
 }
 
-/* Accessibility */
-
 @media (prefers-reduced-motion: reduce) {
     .hero-buttons .btn {
         transition: none;
     }
 }
-
-/* ================= THEME TOKENS / DARK MODE ================= */
 html[data-theme="light"], body.light-mode {
     color-scheme: light;
     --background: #FCF8F3;
@@ -996,8 +962,6 @@ html[data-theme="dark"] .hero-section {
     --hero-text: #FFFFFF;
     --hero-muted: #F0E5D9;
 }
-
-/* Keep the header/footer contrast correct when the legacy body class is used. */
 body.light-mode .site-header,
 body.light-mode .site-footer {
     color: #FFFFFF;
@@ -1016,13 +980,6 @@ body.light-mode .mobile-menu-btn {
 body.light-mode .dropdown-menu a {
     color: #FFFFFF;
 }
-
-
-/* =====================================================
-   TOOLRENT THEME OVERRIDE — LIGHT / DARK MODE
-   Works with html[data-theme="light|dark"] and body classes.
-   Keep this block at the VERY END of the CSS file.
-   ===================================================== */
 
 html[data-theme="light"],
 body.light-mode {
@@ -1076,8 +1033,6 @@ body {
     color: var(--body-text);
     transition: background-color .25s ease, color .25s ease;
 }
-
-/* General content backgrounds */
 html[data-theme="light"] body,
 body.light-mode {
     background-color: #FCF8F3;
@@ -1125,8 +1080,6 @@ body.light-mode section:not(.hero-section) {
     background-color: var(--background);
     color: var(--body-text);
 }
-
-/* Shared cards and panels */
 html[data-theme="dark"] .tool-card,
 html[data-theme="dark"] .card,
 html[data-theme="dark"] .category-card,
@@ -1184,8 +1137,6 @@ body.dark-mode textarea {
     background-color: var(--surface);
     border-color: var(--border);
 }
-
-/* Header, dropdown and footer retain strong contrast */
 .site-header,
 .site-footer {
     background-color: var(--navy);
@@ -1226,8 +1177,6 @@ body.dark-mode .footer-contact p,
 body.dark-mode .footer-bottom {
     color: #E8D9CA;
 }
-
-/* Hero image remains visible in both themes */
 .hero-section {
     background-image: url("images/hero1.jpg");
     background-color: var(--primary-dark);
@@ -1260,10 +1209,6 @@ section,
 .form-container {
     transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
-
-/* ================= NAVBAR ACTIVE & HOVER FIX ================= */
-
-/* Normal links + Home dropdown button */
 .site-header .nav-links .nav-item > a,
 .site-header .nav-links .nav-item > .dropdown-toggle {
     position: relative;
@@ -1278,8 +1223,6 @@ section,
     box-shadow: none;
     transition: color 0.3s ease;
 }
-
-/* Underline base */
 .site-header .nav-links .nav-item > a::after,
 .site-header .nav-links .nav-item > .dropdown-toggle::after {
     content: "";
@@ -1295,23 +1238,17 @@ section,
     transition: transform 0.3s ease;
     pointer-events: none;
 }
-
-/* Active underline */
 .site-header .nav-links .nav-item > a.active::after,
 .site-header .nav-links .nav-item > .dropdown-toggle.active::after,
 .site-header .nav-links .nav-item > .dropdown-toggle[aria-expanded="true"]::after {
     transform: scaleX(1);
 }
-
-/* Hover underline */
 .site-header .nav-links .nav-item > a:hover::after,
 .site-header .nav-links .nav-item > a:focus-visible::after,
 .site-header .nav-links .nav-item > .dropdown-toggle:hover::after,
 .site-header .nav-links .nav-item > .dropdown-toggle:focus-visible::after {
     transform: scaleX(1);
 }
-
-/* Active and hover text color */
 .site-header .nav-links .nav-item > a:hover,
 .site-header .nav-links .nav-item > a.active,
 .site-header .nav-links .nav-item > a:focus-visible,
@@ -1323,14 +1260,10 @@ section,
     background: transparent !important;
     box-shadow: none !important;
 }
-
-/* Dropdown menu */
 .site-header .dropdown-menu {
     background: var(--navy-light);
     border-color: var(--border);
 }
-
-/* Dropdown links */
 .site-header .dropdown-menu a {
     display: block;
     position: relative;
@@ -1338,22 +1271,15 @@ section,
     background: transparent;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
-
-/* No underline inside dropdown menu */
 .site-header .dropdown-menu a::after {
     display: none !important;
 }
-
-/* Dropdown hover */
 .site-header .dropdown-menu a:hover,
 .site-header .dropdown-menu a:focus-visible,
 .site-header .dropdown-menu a.active {
     color: var(--secondary) !important;
     background: transparent !important;
 }
-
-/* ================= MOBILE NAVBAR ================= */
-
 @media (max-width: 800px) {
 
     .site-header .nav-links .nav-item > a,
@@ -1363,8 +1289,6 @@ section,
         justify-content: space-between;
         background: transparent !important;
     }
-
-    /* Mobile underline */
     .site-header .nav-links .nav-item > a::after,
     .site-header .nav-links .nav-item > .dropdown-toggle::after {
         display: block !important;
@@ -1374,8 +1298,6 @@ section,
         width: 45px;
         transform: scaleX(0);
     }
-
-    /* Mobile hover + active underline */
     .site-header .nav-links .nav-item > a:hover::after,
     .site-header .nav-links .nav-item > a.active::after,
     .site-header .nav-links .nav-item > .dropdown-toggle:hover::after,
@@ -1384,8 +1306,6 @@ section,
         transform: scaleX(1);
     }
 }
-
-/* Fix navbar text disappearing on hover */
 .site-header .nav-links .nav-item > a,
 .site-header .nav-links .nav-item > a:visited {
     color: #FFFFFF !important;
@@ -1393,8 +1313,6 @@ section,
     visibility: visible !important;
     background: transparent !important;
 }
-
-/* Hover text color */
 .site-header .nav-links .nav-item > a:hover,
 .site-header .nav-links .nav-item > a:focus-visible,
 .site-header .nav-links .nav-item > a.active {
@@ -1403,8 +1321,6 @@ section,
     visibility: visible !important;
     background: transparent !important;
 }
-
-/* Dropdown button text */
 .site-header .nav-links .dropdown-toggle,
 .site-header .nav-links .dropdown-toggle:hover,
 .site-header .nav-links .dropdown-toggle:focus-visible {
@@ -1412,19 +1328,11 @@ section,
     visibility: visible !important;
     background: transparent !important;
 }
-
-/* Keep dropdown arrow visible */
 .site-header .nav-links .dropdown-toggle i,
 .site-header .nav-links .dropdown-toggle svg {
     opacity: 1 !important;
     visibility: visible !important;
 }
-
-/* ==========================================
-   TOOLNEST RESPONSIVE HEADER & FOOTER FIX
-========================================== */
-
-/* Header layout */
 .site-header {
     position: sticky;
     top: 0;
@@ -1438,13 +1346,9 @@ section,
     max-width: 1200px;
     margin-inline: auto;
 }
-
-/* Desktop: hide mobile-only Login */
 .mobile-login-item {
     display: none;
 }
-
-/* Desktop navigation */
 @media (min-width: 801px) {
     .nav-menu {
         display: flex;
@@ -1467,8 +1371,6 @@ section,
         display: none !important;
     }
 }
-
-/* Tablet and mobile */
 @media (max-width: 800px) {
     .navbar {
         min-height: 72px;
@@ -1497,13 +1399,9 @@ section,
         flex-shrink: 0;
         gap: 7px;
     }
-
-    /* Hide desktop Login */
     .desktop-login-btn {
         display: none !important;
     }
-
-    /* Show hamburger */
     .mobile-menu-btn {
         display: grid;
         place-items: center;
@@ -1512,8 +1410,6 @@ section,
         height: 38px;
         margin: 0;
     }
-
-    /* Collapsed menu */
     .nav-menu {
         display: none;
         position: absolute;
@@ -1528,8 +1424,6 @@ section,
         border-bottom: 3px solid var(--yellow);
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
     }
-
-    /* JS adds .open when hamburger is clicked */
     .nav-menu.open {
         display: block;
     }
@@ -1556,8 +1450,6 @@ section,
         font-size: 14px;
         text-align: start;
     }
-
-    /* Keep links readable on mobile */
     .site-header .nav-links .nav-item > a,
     .site-header .nav-links .dropdown-toggle {
         color: #FFFFFF !important;
@@ -1569,8 +1461,6 @@ section,
     .site-header .nav-links .dropdown-toggle[aria-expanded="true"] {
         color: var(--secondary) !important;
     }
-
-    /* Dropdown stays inside the menu */
     .dropdown-menu {
         position: static;
         display: none;
@@ -1590,8 +1480,6 @@ section,
     .dropdown-menu a {
         padding: 11px 14px;
     }
-
-    /* Mobile Login inside hamburger */
     .mobile-login-item {
         display: block !important;
         margin-top: 10px;
@@ -1614,8 +1502,6 @@ section,
     .mobile-login-item .login-btn i {
         display: inline-block;
     }
-
-    /* Footer: two balanced columns */
     .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 28px 22px;
@@ -1634,8 +1520,6 @@ section,
         padding: 14px 0;
     }
 }
-
-/* Small phones */
 @media (max-width: 480px) {
     .navbar {
         width: 94%;
@@ -1697,8 +1581,6 @@ section,
         gap: 12px;
     }
 }
-
-/* Extra-small phones: stack footer columns */
 @media (max-width: 350px) {
     .footer-grid {
         grid-template-columns: 1fr;
@@ -1713,8 +1595,6 @@ section,
         height: 30px;
     }
 }
-/* ===== Catalogue Hero Section ===== */
-
 .catalogue-hero {
     min-height: 620px;
     padding: 85px 8%;
@@ -1728,8 +1608,6 @@ section,
     color: var(--secondary-dark);
     font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Left Content */
 
 .catalogue-content {
     position: relative;
@@ -1770,16 +1648,12 @@ section,
     font-size: 16px;
     line-height: 1.9;
 }
-
-/* Buttons */
-
 .catalogue-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
     margin-bottom: 40px;
 }
-
 .catalogue-actions a {
     min-height: 52px;
     padding: 0 22px;
@@ -1816,9 +1690,6 @@ section,
     background: #E6D4C2;
     transform: translateY(-3px);
 }
-
-/* Feature Details */
-
 .catalogue-features {
     display: flex;
     flex-wrap: wrap;
@@ -1856,9 +1727,6 @@ section,
     color: var(--primary-dark);
     font-size: 12px;
 }
-
-/* Right Image */
-
 .catalogue-visual {
     position: relative;
     z-index: 1;
@@ -1885,9 +1753,6 @@ section,
     object-fit: cover;
     border-radius: 9px;
 }
-
-/* Floating Image Badge */
-
 .image-badge {
     display: flex;
     align-items: center;
@@ -1918,9 +1783,6 @@ section,
     color: #765744;
     font-size: 12px;
 }
-
-/* Background Decoration */
-
 .decor-circle {
     position: absolute;
     width: 250px;
@@ -1932,8 +1794,6 @@ section,
     background: #E6D4C2;
     opacity: 0.8;
 }
-
-/* ===== Responsive Design ===== */
 
 @media (max-width: 1000px) {
     .catalogue-hero {
@@ -1998,19 +1858,12 @@ section,
         height: 240px;
     }
 }
-
-
-/* ===== Product Categories ===== */
-
 .product-categories {
     padding: 90px 8%;
     background: #F3EADF;
     color: #4A3025;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Section Heading */
-
 .categories-header {
     max-width: 650px;
     margin: 0 auto 50px;
@@ -2044,16 +1897,11 @@ section,
     line-height: 1.8;
 }
 
-/* Categories Grid */
-
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
 }
-
-/* Category Card */
-
 .category-card {
     display: block;
     min-width: 0;
@@ -2073,9 +1921,6 @@ section,
     border-color: var(--secondary-dark);
     box-shadow: 0 18px 35px rgba(74, 48, 37, 0.13);
 }
-
-/* Image */
-
 .category-image {
     height: 230px;
     position: relative;
@@ -2094,9 +1939,6 @@ section,
 .category-card:hover .category-image img {
     transform: scale(1.07);
 }
-
-/* Category Number */
-
 .category-number {
     position: absolute;
     top: 15px;
@@ -2111,9 +1953,6 @@ section,
     font-size: 12px;
     font-weight: 700;
 }
-
-/* Card Information */
-
 .category-info {
     display: flex;
     align-items: center;
@@ -2154,9 +1993,6 @@ section,
     background: var(--secondary-dark);
     color: #FFFFFF;
 }
-
-/* Footer */
-
 .categories-footer {
     display: flex;
     align-items: center;
@@ -2193,9 +2029,6 @@ section,
     background: var(--secondary-dark);
     color: #FFFFFF;
 }
-
-/* Tablet */
-
 @media (max-width: 1000px) {
     .product-categories {
         padding: 75px 5%;
@@ -2210,9 +2043,6 @@ section,
         height: 220px;
     }
 }
-
-/* Mobile */
-
 @media (max-width: 600px) {
     .product-categories {
         padding: 60px 5%;
@@ -2240,9 +2070,6 @@ section,
         flex-direction: column;
     }
 }
-
-/* Dark Mode */
-
 html.dark .product-categories,
 body.dark .product-categories,
 html.dark-mode .product-categories,
@@ -2323,16 +2150,12 @@ body.dark .view-all-btn:hover {
     background: #B85F43;
 }
 
-/* ===== Featured Products Section ===== */
-
 .featured-products {
     padding: 90px 8%;
     background: var(--primary-light);
     color: var(--primary-dark);
     font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Section Header */
 
 .featured-header {
     display: flex;
@@ -2391,16 +2214,12 @@ body.dark .view-all-btn:hover {
     color: var(--primary-light);
 }
 
-/* Product Grid */
 
 .featured-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
 }
-
-/* Product Card */
-
 .product-card {
     min-width: 0;
     overflow: hidden;
@@ -2415,9 +2234,6 @@ body.dark .view-all-btn:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 35px rgba(74, 48, 37, 0.12);
 }
-
-/* Product Image */
-
 .product-image {
     position: relative;
     height: 235px;
@@ -2437,7 +2253,6 @@ body.dark .view-all-btn:hover {
     transform: scale(1.06);
 }
 
-/* Product Tag */
 
 .product-tag {
     position: absolute;
@@ -2452,8 +2267,6 @@ body.dark .view-all-btn:hover {
     font-weight: 700;
     letter-spacing: 1px;
 }
-
-/* Product Details */
 
 .product-info {
     padding: 22px 20px 20px;
@@ -2482,9 +2295,6 @@ body.dark .view-all-btn:hover {
     font-size: 13px;
     line-height: 1.7;
 }
-
-/* Price */
-
 .product-bottom {
     display: flex;
     align-items: center;
@@ -2521,8 +2331,6 @@ body.dark .view-all-btn:hover {
     font-size: 17px;
 }
 
-/* View Details Button */
-
 .product-details-btn {
     display: flex;
     align-items: center;
@@ -2543,8 +2351,6 @@ body.dark .view-all-btn:hover {
 .product-details-btn:hover {
     background: var(--secondary-dark);
 }
-
-/* ===== Responsive ===== */
 
 @media (max-width: 1000px) {
     .featured-products {
@@ -2583,8 +2389,6 @@ body.dark .view-all-btn:hover {
         min-height: 0;
     }
 }
-
-/* ===== Dark Mode ===== */
 
 html.dark .featured-products,
 body.dark .featured-products,
@@ -2668,9 +2472,6 @@ html.dark .view-all-products:hover,
 body.dark .view-all-products:hover {
     background: #B85F43;
 }
-
-/* ===== Download Catalogue Section ===== */
-
 .download-catalogue {
     position: relative;
     display: grid;
@@ -2683,8 +2484,6 @@ body.dark .view-all-products:hover {
     color: #4A3025;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Left Content */
 
 .download-catalogue-content {
     position: relative;
@@ -2720,8 +2519,6 @@ body.dark .view-all-products:hover {
     line-height: 1.9;
 }
 
-/* Feature List */
-
 .download-features {
     display: flex;
     flex-direction: column;
@@ -2748,9 +2545,6 @@ body.dark .view-all-products:hover {
     color: var(--secondary);
     font-size: 13px;
 }
-
-/* Download Button */
-
 .download-pdf-btn {
     display: inline-flex;
     align-items: center;
@@ -2800,9 +2594,6 @@ body.dark .view-all-products:hover {
     font-size: 10px;
     font-weight: 700;
 }
-
-/* Right Visual */
-
 .download-catalogue-visual {
     position: relative;
     display: flex;
@@ -2810,9 +2601,6 @@ body.dark .view-all-products:hover {
     justify-content: center;
     min-height: 450px;
 }
-
-/* Catalogue Document */
-
 .catalogue-document {
     position: relative;
     z-index: 1;
@@ -2930,8 +2718,6 @@ body.dark .view-all-products:hover {
     letter-spacing: 1px;
 }
 
-/* Decorative Shapes */
-
 .catalogue-decoration {
     position: absolute;
     border-radius: 50%;
@@ -2952,9 +2738,6 @@ body.dark .view-all-products:hover {
     border: 18px solid #B85F43;
     opacity: 0.25;
 }
-
-/* Floating Badge */
-
 .pdf-floating-badge {
     position: absolute;
     z-index: 2;
@@ -2992,8 +2775,6 @@ body.dark .view-all-products:hover {
     color: var(--primary);
     font-size: 11px;
 }
-
-/* ===== Responsive ===== */
 
 @media (max-width: 950px) {
     .download-catalogue {
@@ -3054,8 +2835,6 @@ body.dark .view-all-products:hover {
         padding: 11px;
     }
 }
-
-/* ===== Dark Mode ===== */
 
 html.dark .download-catalogue,
 body.dark .download-catalogue,
@@ -3159,8 +2938,6 @@ body.dark .pdf-floating-badge p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Background Image + Overlay */
-
 .cta-background {
     position: absolute;
     inset: 0;
@@ -3177,8 +2954,6 @@ body.dark .pdf-floating-badge p {
     background-position: center;
     transform: scale(1.02);
 }
-
-/* Content */
 
 .cta-content {
     position: relative;
@@ -3222,9 +2997,6 @@ body.dark .pdf-floating-badge p {
     font-size: 16px;
     line-height: 1.9;
 }
-
-/* CTA Buttons */
-
 .cta-buttons {
     display: flex;
     justify-content: center;
@@ -3271,9 +3043,6 @@ body.dark .pdf-floating-badge p {
     color: #4A3025;
     transform: translateY(-3px);
 }
-
-/* Small Note */
-
 .cta-note {
     display: flex;
     align-items: center;
@@ -3293,8 +3062,6 @@ body.dark .pdf-floating-badge p {
     background: var(--secondary-dark);
     color: #FFFFFF;
 }
-
-/* Decorative Circles */
 
 .cta-decoration {
     position: absolute;
@@ -3323,8 +3090,6 @@ body.dark .pdf-floating-badge p {
     bottom: -370px;
     left: -120px;
 }
-
-/* ===== Responsive ===== */
 
 @media (max-width: 768px) {
     .final-cta {
@@ -3370,8 +3135,6 @@ body.dark .pdf-floating-badge p {
         line-height: 1.6;
     }
 }
-
-/* ===== Dark Mode ===== */
 
 html.dark .final-cta .cta-background,
 body.dark .final-cta .cta-background,

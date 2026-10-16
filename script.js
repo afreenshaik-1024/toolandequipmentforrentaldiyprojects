@@ -720,3 +720,79 @@
     init();
   }
 })();
+
+/* ==============================
+   PROFILE MENU & LOGOUT
+============================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const profileTrigger = document.getElementById("profileTrigger");
+  const profileDropdown = document.getElementById("profileDropdown");
+  const profileWrapper = document.getElementById("profileWrapper");
+
+  const logoutDialog = document.getElementById("logoutDialog");
+  const cancelLogout = document.getElementById("cancelLogout");
+  const confirmLogout = document.getElementById("confirmLogout");
+
+  // Open / close profile dropdown
+  if (profileTrigger && profileDropdown) {
+    profileTrigger.addEventListener("click", function () {
+      const isOpen =
+        profileTrigger.getAttribute("aria-expanded") === "true";
+
+      profileTrigger.setAttribute("aria-expanded", String(!isOpen));
+      profileDropdown.hidden = isOpen;
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+      if (
+        profileWrapper &&
+        !profileWrapper.contains(event.target)
+      ) {
+        profileDropdown.hidden = true;
+        profileTrigger.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close dropdown with Escape
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !profileDropdown.hidden) {
+        profileDropdown.hidden = true;
+        profileTrigger.setAttribute("aria-expanded", "false");
+        profileTrigger.focus();
+      }
+    });
+  }
+
+  // Open logout confirmation from either logout button
+  document.querySelectorAll("[data-logout]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      if (profileDropdown) {
+        profileDropdown.hidden = true;
+      }
+
+      if (profileTrigger) {
+        profileTrigger.setAttribute("aria-expanded", "false");
+      }
+
+      if (logoutDialog && !logoutDialog.open) {
+        logoutDialog.showModal();
+      }
+    });
+  });
+
+  // No: stay on the dashboard
+  if (cancelLogout && logoutDialog) {
+    cancelLogout.addEventListener("click", function () {
+      logoutDialog.close();
+    });
+  }
+
+  // Yes: redirect to the login page
+  if (confirmLogout) {
+    confirmLogout.addEventListener("click", function () {
+      window.location.href = "login.html";
+    });
+  }
+});

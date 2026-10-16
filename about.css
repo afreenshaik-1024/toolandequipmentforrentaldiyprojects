@@ -2719,174 +2719,19 @@ body.dark-mode .why-toolrent .why-card-bottom i {
 
 .cta-banner {
   width: 100%;
-  min-height: 440px;
-  background-image: url("images/cta-workshop.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: 
-  Arial, Helvetica, sans-serif;
-}
-
-.cta-overlay {
-  min-height: 440px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 65px 7%;
-  background: linear-gradient(
-    90deg,
-    rgba(45, 28, 20, 0.88) 0%,
-    rgba(74, 48, 37, 0.78) 55%,
-    rgba(74, 48, 37, 0.38) 100%
-  );
-}
-
-.cta-content {
-  width: 100%;
-  max-width: 760px;
-  text-align: center;
-}
-
-.cta-tagline {
-  display: inline-block;
-  margin-bottom: 20px;
-  color: #E6B29A;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-}
-
-.cta-content h2 {
-  margin: 0 0 18px;
-  color: var(--cream);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.2;
-}
-
-.cta-content h2 span {
-  color: #E5A084;
-}
-
-.cta-content p {
-  max-width: 590px;
-  margin: 0 auto;
-  color: #F0E4D9;
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-.cta-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 52px;
-  padding: 15px 25px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cta-primary {
-  background: var(--terracotta);
-  color: #FFFFFF;
-}
-
-.cta-primary:hover {
-  background: #D07857;
-  transform: translateY(-3px);
-}
-
-.cta-primary i {
-  transition: transform 0.3s ease;
-}
-
-.cta-primary:hover i {
-  transform: translateX(4px);
-}
-
-.cta-secondary {
-  border-color: #F3EADF;
-  background: transparent;
-  color: var(--cream);
-}
-
-.cta-secondary:hover {
-  background: var(--cream);
-  color: var(--dark-brown);
-  transform: translateY(-3px);
-}
-
-@media (max-width: 600px) {
-  .cta-banner,
-  .cta-overlay {
-    min-height: 400px;
-  }
-
-  .cta-overlay {
-    padding: 55px 6%;
-  }
-
-  .cta-content h2 {
-    font-size: 36px;
-  }
-
-  .cta-content p {
-    font-size: 14px;
-  }
-
-  .cta-tagline {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-  }
-
-  .cta-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .cta-btn {
-    width: 100%;
-  }
-}
-:root {
-  --earth-brown: #70452F;
-  --dark-brown: #4A3025;
-  --terracotta: #B85F43;
-  --cream: #F3EADF;
-}
-.cta-banner {
-  width: 100%;
   min-height: 500px;
-
   background-image: url("images/cta2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 .cta-overlay {
   min-height: 500px;
   box-sizing: border-box;
-
   display: flex;
   align-items: center;
-
   padding: 65px 9%;
 
   background: linear-gradient(
@@ -2897,6 +2742,7 @@ body.dark-mode .why-toolrent .why-card-bottom i {
     rgba(45, 28, 19, 0.05) 100%
   );
 }
+
 .cta-content {
   width: 100%;
   max-width: 650px;
@@ -2905,61 +2751,57 @@ body.dark-mode .why-toolrent .why-card-bottom i {
 .cta-tagline {
   display: inline-block;
   margin-bottom: 24px;
-
   color: #E58B65;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2.5px;
 }
+
 .cta-content h2 {
   margin: 0 0 22px;
-
   color: var(--cream);
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: clamp(42px, 5.5vw, 68px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(36px, 5.5vw, 68px);
   font-weight: 700;
-  line-height: 1.04;
+  line-height: 1.1;
 }
 
 .cta-content h2 span {
   color: #DF805C;
 }
+
 .cta-content p {
   max-width: 590px;
   margin: 0;
-
   color: #F1E6DD;
   font-size: 16px;
   line-height: 1.75;
 }
+
 .cta-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 18px;
-
   margin-top: 32px;
 }
 
 .cta-btn {
   min-height: 54px;
   box-sizing: border-box;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-
   padding: 15px 25px;
   border: 1px solid transparent;
   border-radius: 40px;
-
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-
   transition: all 0.3s ease;
 }
+
 .cta-primary {
   background: var(--terracotta);
   color: #FFFFFF;
@@ -2978,6 +2820,7 @@ body.dark-mode .why-toolrent .why-card-bottom i {
 .cta-primary:hover .arrow-icon {
   transform: translateX(5px);
 }
+
 .cta-secondary {
   border-color: var(--cream);
   background: rgba(45, 28, 19, 0.20);
@@ -2989,6 +2832,8 @@ body.dark-mode .why-toolrent .why-card-bottom i {
   color: var(--dark-brown);
   transform: translateY(-3px);
 }
+
+/* Tablet */
 @media (max-width: 768px) {
   .cta-banner,
   .cta-overlay {
@@ -2999,8 +2844,8 @@ body.dark-mode .why-toolrent .why-card-bottom i {
     padding: 55px 6%;
     background: linear-gradient(
       90deg,
-      rgba(35, 21, 14, 0.90),
-      rgba(45, 28, 19, 0.65)
+      rgba(35, 21, 14, 0.90) 0%,
+      rgba(45, 28, 19, 0.65) 100%
     );
   }
 
@@ -3012,6 +2857,8 @@ body.dark-mode .why-toolrent .why-card-bottom i {
     font-size: 15px;
   }
 }
+
+/* Mobile */
 @media (max-width: 480px) {
   .cta-banner,
   .cta-overlay {
@@ -3030,6 +2877,7 @@ body.dark-mode .why-toolrent .why-card-bottom i {
 
   .cta-content h2 {
     font-size: 40px;
+    line-height: 1.15;
   }
 
   .cta-content p {

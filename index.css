@@ -1,24 +1,18 @@
 :root {
-    /* Earth Brown & Terracotta — Tool & Equipment Rental */
     --primary: #594536;
     --primary-dark: #463528;
     --primary-light: #F0E5D9;
-
     --secondary: #C77745;
     --secondary-dark: #A85E32;
     --secondary-light: #F5E8DC;
-
     --background: #FCF8F3;
     --surface: #FFFFFF;
     --surface-muted: #F6EEE6;
-
     --heading: #342B25;
     --body-text: #796B60;
     --white: #FFFFFF;
     --text: #FFFFFF;
     --border: #E8DDD2;
-
-    /* Compatibility aliases for existing selectors */
     --navy: var(--primary);
     --navy-light: var(--primary-dark);
     --yellow: var(--secondary);
@@ -51,15 +45,10 @@ button {
     width: min(1200px, 94%);
     margin: auto;
 }
-
-/* ============== HEADER ============== */
-
-
 .site-header {
     background: var(--navy);
     color: var(--text);
     border-bottom: 3px solid var(--yellow);
-
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -73,9 +62,6 @@ button {
     justify-content: space-between;
     gap: 22px;
 }
-
-/* Brand */
-
 .logo {
     display: flex;
     align-items: center;
@@ -106,9 +92,6 @@ button {
     color: var(--primary-light);
     white-space: nowrap;
 }
-
-/* Navigation */
-
 .nav-menu {
     display: flex;
     align-items: center;
@@ -178,8 +161,6 @@ button {
     color: var(--navy);
 }
 
-/* Right actions */
-
 .nav-actions {
     display: flex;
     align-items: center;
@@ -229,9 +210,6 @@ button {
     background: transparent;
     color: white;
 }
-
-/* ============== MAIN CONTENT ============== */
-
 .demo-section {
     min-height: 320px;
     padding: 65px 0;
@@ -297,9 +275,6 @@ button {
     border: 1px solid var(--navy);
     color: var(--navy);
 }
-
-/* ============== FOOTER ============== */
-
 .site-footer {
     background: var(--navy);
     color: var(--text);
@@ -419,8 +394,6 @@ button {
     color: var(--yellow);
 }
 
-/* ============== LIGHT MODE ============== */
-
 body.light-mode {
     --navy: var(--primary);
     --navy-light: var(--primary-dark);
@@ -455,9 +428,6 @@ body.light-mode .mobile-menu-btn {
 body.light-mode .dropdown-menu a {
     color: #FFFFFF;
 }
-
-/* ============== RESPONSIVE ============== */
-
 @media (max-width: 1050px) {
     .navbar {
         gap: 12px;
@@ -611,301 +581,6 @@ body.light-mode .dropdown-menu a {
         padding: 45px 0;
     }
 }
-
-/* ================= HERO SECTION ================= */
-
-.hero-section {
-    --hero-text: #ffffff;
-    --hero-muted: #F0E5D9;
-    --hero-accent: var(--secondary);
-
-    position: relative;
-    isolation: isolate;
-    display: flex;
-    align-items: center;
-
-    min-height: 620px;
-    padding: 100px 6%;
-
-    background-color: #463528;
-    background-image: url("images/hero1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    overflow: hidden;
-    color: var(--hero-text);
-}
-
-/* Navy overlay */
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    background: linear-gradient(
-        90deg,
-        rgba(25, 57, 45, 0.96) 0%,
-        rgba(36, 75, 60, 0.88) 45%,
-        rgba(36, 75, 60, 0.40) 100%
-    );
-}
-
-.hero-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero-content {
-    max-width: 720px;
-}
-
-.hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    margin-bottom: 24px;
-    padding: 10px 16px;
-
-    border: 1px solid rgba(217, 154, 69, 0.55);
-    border-radius: 50px;
-
-    color: #DFA477;
-    background: rgba(217, 154, 69, 0.12);
-
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-.hero-content h1 {
-    margin: 0 0 22px;
-
-    color: var(--hero-text);
-    font-size: clamp(38px, 5vw, 64px);
-    font-weight: 800;
-    line-height: 1.12;
-    letter-spacing: -1.5px;
-}
-
-.hero-content h1 span {
-    display: block;
-    color: var(--hero-accent);
-}
-
-.hero-description {
-    max-width: 590px;
-    margin: 0 0 30px;
-
-    color: var(--hero-muted);
-    font-size: 17px;
-    line-height: 1.8;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.hero-buttons .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
-    min-height: 52px;
-    padding: 14px 25px;
-
-    border: 2px solid transparent;
-    border-radius: 8px;
-
-    font-size: 15px;
-    font-weight: 700;
-    text-decoration: none;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.btn-primary {
-    color: #342B25;
-    background: #C77745;
-}
-
-.btn-primary:hover {
-    background: #DFA477;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.65) !important;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.btn-outline:hover {
-    color: #342B25;
-    background: #ffffff;
-}
-
-.hero-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-
-    margin-top: 32px;
-}
-
-.hero-features span {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    color: #F0E5D9;
-    font-size: 13px;
-}
-
-.hero-features i {
-    color: #DFA477;
-}
-
-/* ================= DARK MODE ================= */
-
-html[data-theme="dark"] .hero-section {
-    --hero-text: #FCF8F3;
-    --hero-muted: #E8D9CA;
-}
-
-/* ================= LIGHT MODE ================= */
-
-html[data-theme="light"] .hero-section {
-    --hero-text: #ffffff;
-    --hero-muted: #F0E5D9;
-}
-
-/* ================= 1024px TABLET ================= */
-
-@media (max-width: 1024px) {
-    .hero-section {
-        min-height: 560px;
-        padding: 80px 5%;
-        background-position: 60% center;
-    }
-
-    .hero-content {
-        max-width: 650px;
-    }
-
-    .hero-content h1 {
-        font-size: 52px;
-    }
-
-    .hero-description {
-        max-width: 540px;
-        font-size: 16px;
-    }
-
-    .hero-overlay {
-        background: linear-gradient(
-            90deg,
-            rgba(25, 57, 45, 0.96),
-            rgba(25, 57, 45, 0.82) 65%,
-            rgba(36, 75, 60, 0.50)
-        );
-    }
-}
-
-/* ================= 768px TABLET ================= */
-
-@media (max-width: 768px) {
-    .hero-section {
-        min-height: 540px;
-        padding: 72px 6%;
-        background-position: 65% center;
-    }
-
-    .hero-content {
-        max-width: 570px;
-    }
-
-    .hero-tag {
-        margin-bottom: 20px;
-        font-size: 11px;
-        letter-spacing: 1px;
-    }
-
-    .hero-content h1 {
-        font-size: 44px;
-        line-height: 1.15;
-        letter-spacing: -1px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-        line-height: 1.75;
-    }
-
-    .hero-features {
-        gap: 14px 20px;
-    }
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 480px) {
-    .hero-section {
-        min-height: 570px;
-        padding: 64px 22px;
-        background-position: 62% center;
-    }
-
-    .hero-overlay {
-        background: rgba(25, 57, 45, 0.88);
-    }
-
-    .hero-content h1 {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-
-    .hero-description {
-        font-size: 14px;
-        line-height: 1.8;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .hero-features {
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 26px;
-    }
-}
-
-/* Accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-    .hero-buttons .btn {
-        transition: none;
-    }
-}
-
-/* ================= THEME TOKENS / DARK MODE ================= */
 html[data-theme="light"], body.light-mode {
     color-scheme: light;
     --background: #FCF8F3;
@@ -1011,8 +686,6 @@ html[data-theme="dark"] .hero-section {
     --hero-text: #FFFFFF;
     --hero-muted: #F0E5D9;
 }
-
-/* Keep the header/footer contrast correct when the legacy body class is used. */
 body.light-mode .site-header,
 body.light-mode .site-footer {
     color: #FFFFFF;
@@ -1031,13 +704,6 @@ body.light-mode .mobile-menu-btn {
 body.light-mode .dropdown-menu a {
     color: #FFFFFF;
 }
-
-
-/* =====================================================
-   TOOLRENT THEME OVERRIDE — LIGHT / DARK MODE
-   Works with html[data-theme="light|dark"] and body classes.
-   Keep this block at the VERY END of the CSS file.
-   ===================================================== */
 
 html[data-theme="light"],
 body.light-mode {
@@ -1091,8 +757,6 @@ body {
     color: var(--body-text);
     transition: background-color .25s ease, color .25s ease;
 }
-
-/* General content backgrounds */
 html[data-theme="light"] body,
 body.light-mode {
     background-color: #FCF8F3;
@@ -1140,8 +804,6 @@ body.light-mode section:not(.hero-section) {
     background-color: var(--background);
     color: var(--body-text);
 }
-
-/* Shared cards and panels */
 html[data-theme="dark"] .tool-card,
 html[data-theme="dark"] .card,
 html[data-theme="dark"] .category-card,
@@ -1199,8 +861,6 @@ body.dark-mode textarea {
     background-color: var(--surface);
     border-color: var(--border);
 }
-
-/* Header, dropdown and footer retain strong contrast */
 .site-header,
 .site-footer {
     background-color: var(--navy);
@@ -1241,8 +901,6 @@ body.dark-mode .footer-contact p,
 body.dark-mode .footer-bottom {
     color: #E8D9CA;
 }
-
-/* Hero image remains visible in both themes */
 .hero-section {
     background-image: url("images/hero1.jpg");
     background-color: var(--primary-dark);
@@ -1275,10 +933,6 @@ section,
 .form-container {
     transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
-
-/* ================= NAVBAR ACTIVE & HOVER FIX ================= */
-
-/* Normal links + Home dropdown button */
 .site-header .nav-links .nav-item > a,
 .site-header .nav-links .nav-item > .dropdown-toggle {
     position: relative;
@@ -1293,8 +947,6 @@ section,
     box-shadow: none;
     transition: color 0.3s ease;
 }
-
-/* Underline base */
 .site-header .nav-links .nav-item > a::after,
 .site-header .nav-links .nav-item > .dropdown-toggle::after {
     content: "";
@@ -1310,23 +962,17 @@ section,
     transition: transform 0.3s ease;
     pointer-events: none;
 }
-
-/* Active underline */
 .site-header .nav-links .nav-item > a.active::after,
 .site-header .nav-links .nav-item > .dropdown-toggle.active::after,
 .site-header .nav-links .nav-item > .dropdown-toggle[aria-expanded="true"]::after {
     transform: scaleX(1);
 }
-
-/* Hover underline */
 .site-header .nav-links .nav-item > a:hover::after,
 .site-header .nav-links .nav-item > a:focus-visible::after,
 .site-header .nav-links .nav-item > .dropdown-toggle:hover::after,
 .site-header .nav-links .nav-item > .dropdown-toggle:focus-visible::after {
     transform: scaleX(1);
 }
-
-/* Active and hover text color */
 .site-header .nav-links .nav-item > a:hover,
 .site-header .nav-links .nav-item > a.active,
 .site-header .nav-links .nav-item > a:focus-visible,
@@ -1338,14 +984,10 @@ section,
     background: transparent !important;
     box-shadow: none !important;
 }
-
-/* Dropdown menu */
 .site-header .dropdown-menu {
     background: var(--navy-light);
     border-color: var(--border);
 }
-
-/* Dropdown links */
 .site-header .dropdown-menu a {
     display: block;
     position: relative;
@@ -1353,21 +995,15 @@ section,
     background: transparent;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
-
-/* No underline inside dropdown menu */
 .site-header .dropdown-menu a::after {
     display: none !important;
 }
-
-/* Dropdown hover */
 .site-header .dropdown-menu a:hover,
 .site-header .dropdown-menu a:focus-visible,
 .site-header .dropdown-menu a.active {
     color: var(--secondary) !important;
     background: transparent !important;
 }
-
-/* ================= MOBILE NAVBAR ================= */
 
 @media (max-width: 800px) {
 
@@ -1378,8 +1014,6 @@ section,
         justify-content: space-between;
         background: transparent !important;
     }
-
-    /* Mobile underline */
     .site-header .nav-links .nav-item > a::after,
     .site-header .nav-links .nav-item > .dropdown-toggle::after {
         display: block !important;
@@ -1389,8 +1023,6 @@ section,
         width: 45px;
         transform: scaleX(0);
     }
-
-    /* Mobile hover + active underline */
     .site-header .nav-links .nav-item > a:hover::after,
     .site-header .nav-links .nav-item > a.active::after,
     .site-header .nav-links .nav-item > .dropdown-toggle:hover::after,
@@ -1399,8 +1031,6 @@ section,
         transform: scaleX(1);
     }
 }
-
-/* Fix navbar text disappearing on hover */
 .site-header .nav-links .nav-item > a,
 .site-header .nav-links .nav-item > a:visited {
     color: #FFFFFF !important;
@@ -1408,8 +1038,6 @@ section,
     visibility: visible !important;
     background: transparent !important;
 }
-
-/* Hover text color */
 .site-header .nav-links .nav-item > a:hover,
 .site-header .nav-links .nav-item > a:focus-visible,
 .site-header .nav-links .nav-item > a.active {
@@ -1418,8 +1046,6 @@ section,
     visibility: visible !important;
     background: transparent !important;
 }
-
-/* Dropdown button text */
 .site-header .nav-links .dropdown-toggle,
 .site-header .nav-links .dropdown-toggle:hover,
 .site-header .nav-links .dropdown-toggle:focus-visible {
@@ -1427,19 +1053,11 @@ section,
     visibility: visible !important;
     background: transparent !important;
 }
-
-/* Keep dropdown arrow visible */
 .site-header .nav-links .dropdown-toggle i,
 .site-header .nav-links .dropdown-toggle svg {
     opacity: 1 !important;
     visibility: visible !important;
 }
-
-/* ==========================================
-   TOOLNEST RESPONSIVE HEADER & FOOTER FIX
-========================================== */
-
-/* Header layout */
 .site-header {
     position: sticky;
     top: 0;
@@ -1454,12 +1072,9 @@ section,
     margin-inline: auto;
 }
 
-/* Desktop: hide mobile-only Login */
 .mobile-login-item {
     display: none;
 }
-
-/* Desktop navigation */
 @media (min-width: 801px) {
     .nav-menu {
         display: flex;
@@ -1482,8 +1097,6 @@ section,
         display: none !important;
     }
 }
-
-/* Tablet and mobile */
 @media (max-width: 800px) {
     .navbar {
         min-height: 72px;
@@ -1512,13 +1125,9 @@ section,
         flex-shrink: 0;
         gap: 7px;
     }
-
-    /* Hide desktop Login */
     .desktop-login-btn {
         display: none !important;
     }
-
-    /* Show hamburger */
     .mobile-menu-btn {
         display: grid;
         place-items: center;
@@ -1527,8 +1136,6 @@ section,
         height: 38px;
         margin: 0;
     }
-
-    /* Collapsed menu */
     .nav-menu {
         display: none;
         position: absolute;
@@ -1543,8 +1150,6 @@ section,
         border-bottom: 3px solid var(--yellow);
         box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
     }
-
-    /* JS adds .open when hamburger is clicked */
     .nav-menu.open {
         display: block;
     }
@@ -1571,8 +1176,6 @@ section,
         font-size: 14px;
         text-align: start;
     }
-
-    /* Keep links readable on mobile */
     .site-header .nav-links .nav-item > a,
     .site-header .nav-links .dropdown-toggle {
         color: #FFFFFF !important;
@@ -1584,8 +1187,6 @@ section,
     .site-header .nav-links .dropdown-toggle[aria-expanded="true"] {
         color: var(--secondary) !important;
     }
-
-    /* Dropdown stays inside the menu */
     .dropdown-menu {
         position: static;
         display: none;
@@ -1605,8 +1206,6 @@ section,
     .dropdown-menu a {
         padding: 11px 14px;
     }
-
-    /* Mobile Login inside hamburger */
     .mobile-login-item {
         display: block !important;
         margin-top: 10px;
@@ -1629,8 +1228,6 @@ section,
     .mobile-login-item .login-btn i {
         display: inline-block;
     }
-
-    /* Footer: two balanced columns */
     .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 28px 22px;
@@ -1649,8 +1246,6 @@ section,
         padding: 14px 0;
     }
 }
-
-/* Small phones */
 @media (max-width: 480px) {
     .navbar {
         width: 94%;
@@ -1712,8 +1307,6 @@ section,
         gap: 12px;
     }
 }
-
-/* Extra-small phones: stack footer columns */
 @media (max-width: 350px) {
     .footer-grid {
         grid-template-columns: 1fr;
@@ -1727,6 +1320,36 @@ section,
         width: 30px;
         height: 30px;
     }
+}
+
+.footer-contact h3 {
+    color: #C77745;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: #E8DDD2;
+    font-size: 14px;
+}
+
+.footer-contact i {
+    color: #C77745;
+    width: 18px;
+}
+
+.footer-contact a {
+    color: #E8DDD2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #C77745;
 }
 /* =========================================
    HERO / BANNER SECTION

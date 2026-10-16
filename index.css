@@ -1351,12 +1351,6 @@ section,
 .footer-contact a:hover {
     color: #C77745;
 }
-/* =========================================
-   HERO / BANNER SECTION
-   ToolRent - Responsive + Light/Dark Mode
-========================================= */
-
-/* Root theme colors */
 :root {
     --primary: #594536;
     --primary-dark: #463528;
@@ -1376,8 +1370,6 @@ section,
     --hero-muted: rgba(255, 255, 255, 0.88);
     --hero-overlay: rgba(42, 32, 25, 0.72);
 }
-
-/* Dark theme */
 html[data-theme="dark"],
 body.dark-mode {
     --background: #1C1916;
@@ -1388,8 +1380,6 @@ body.dark-mode {
 
     --hero-overlay: rgba(18, 15, 12, 0.80);
 }
-
-/* Hero section */
 .hero-section {
     position: relative;
     isolation: isolate;
@@ -1398,17 +1388,12 @@ body.dark-mode {
     min-height: 650px;
     padding: 90px 6%;
     overflow: hidden;
-
     background-color: var(--primary);
-
-    /* Replace with your actual hero image path */
     background-image: url("images/hero1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-/* Background overlay */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -1421,8 +1406,6 @@ body.dark-mode {
     );
     pointer-events: none;
 }
-
-/* Content container */
 .hero-container {
     width: 100%;
     max-width: 1240px;
@@ -1434,8 +1417,6 @@ body.dark-mode {
     max-width: 700px;
     color: var(--hero-text);
 }
-
-/* Small label */
 .hero-tag {
     display: inline-flex;
     align-items: center;
@@ -1457,8 +1438,6 @@ body.dark-mode {
     color: #F0A16F;
     font-size: 16px;
 }
-
-/* Main heading */
 .hero-content h1 {
     margin: 0 0 22px;
     color: var(--primary-light);
@@ -1473,8 +1452,6 @@ body.dark-mode {
     display: block;
     color: var(--secondary);
 }
-
-/* Description */
 .hero-description {
     max-width: 580px;
     margin: 0 0 30px;
@@ -1483,8 +1460,6 @@ body.dark-mode {
     font-size: 17px;
     line-height: 1.85;
 }
-
-/* Buttons */
 .hero-buttons {
     display: flex;
     align-items: center;
@@ -1518,8 +1493,6 @@ body.dark-mode {
 .hero-buttons .btn:hover {
     transform: translateY(-3px);
 }
-
-/* Primary button */
 .hero-buttons .btn-primary {
     color: #FFFFFF;
     background: var(--secondary);
@@ -1538,8 +1511,6 @@ body.dark-mode {
 .hero-buttons .btn-primary:hover i {
     transform: translateX(4px);
 }
-
-/* Outline button */
 .hero-buttons .btn-outline {
     color: #FFFFFF;
     background: transparent;
@@ -1551,8 +1522,6 @@ body.dark-mode {
     background: #FFFFFF;
     border-color: #FFFFFF;
 }
-
-/* Feature list */
 .hero-features {
     display: flex;
     align-items: center;
@@ -1574,10 +1543,6 @@ body.dark-mode {
     color: var(--secondary);
     font-size: 17px;
 }
-
-/* =========================================
-   RESPONSIVE: 1024px
-========================================= */
 @media (max-width: 1024px) {
     .hero-section {
         min-height: 590px;
@@ -1603,10 +1568,6 @@ body.dark-mode {
         gap: 12px 18px;
     }
 }
-
-/* =========================================
-   RESPONSIVE: 768px
-========================================= */
 @media (max-width: 768px) {
     .hero-section {
         min-height: 560px;
@@ -1661,10 +1622,6 @@ body.dark-mode {
         font-size: 13px;
     }
 }
-
-/* =========================================
-   RESPONSIVE: 480px AND BELOW
-========================================= */
 @media (max-width: 480px) {
     .hero-section {
         min-height: auto;
@@ -1729,19 +1686,12 @@ body.dark-mode {
         font-size: 13px;
     }
 }
-
-/* Reduce animations for accessibility */
 @media (prefers-reduced-motion: reduce) {
     .hero-buttons .btn,
     .hero-buttons .btn-primary i {
         transition: none;
     }
 }
-
-/* =========================================
-   POPULAR CATEGORIES
-   Earth Brown + Terracotta Theme
-========================================= */
 
 :root {
     --primary: #594536;
@@ -1758,8 +1708,6 @@ body.dark-mode {
     --body-text: #796B60;
     --border: #E8DDD2;
 }
-
-/* Section */
 .categories-section {
     padding: 85px 5%;
     background: var(--background);
@@ -1771,8 +1719,6 @@ body.dark-mode {
     max-width: 1400px;
     margin: 0 auto;
 }
-
-/* Heading */
 .categories-header {
     max-width: 700px;
     margin: 0 auto 45px;
@@ -1814,15 +1760,11 @@ body.dark-mode {
     font-size: 16px;
     line-height: 1.8;
 }
-
-/* Grid: 3 columns on desktop */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
-
-/* Card */
 .category-card {
     min-width: 0;
     overflow: hidden;
@@ -1850,8 +1792,6 @@ body.dark-mode {
     border-color: var(--secondary);
     box-shadow: 0 16px 32px rgba(89, 69, 54, 0.14);
 }
-
-/* Image */
 .category-image {
     width: 100%;
     aspect-ratio: 1 / 0.95;
@@ -1871,8 +1811,6 @@ body.dark-mode {
 .category-card:hover .category-image img {
     transform: scale(1.06);
 }
-
-/* Card content */
 .category-content {
     display: flex;
     flex: 1;
@@ -1881,8 +1819,6 @@ body.dark-mode {
 
     padding: 22px 23px 25px;
 }
-
-/* Terracotta accent line */
 .category-accent {
     display: block;
     width: 31px;
@@ -1930,10 +1866,6 @@ body.dark-mode {
     transform: translateX(5px);
 }
 
-/* =========================================
-   DARK MODE
-========================================= */
-
 html[data-theme="dark"] .categories-section,
 body.dark-mode .categories-section {
     --background: #1C1916;
@@ -1959,10 +1891,6 @@ html[data-theme="dark"] .section-tag,
 body.dark-mode .section-tag {
     color: #E6A078;
 }
-
-/* =========================================
-   RESPONSIVE: 1024px
-========================================= */
 
 @media (max-width: 1024px) {
     .categories-section {
@@ -1990,10 +1918,6 @@ body.dark-mode .section-tag {
         font-size: 14px;
     }
 }
-
-/* =========================================
-   RESPONSIVE: 768px
-========================================= */
 
 @media (max-width: 768px) {
     .categories-section {
@@ -2033,10 +1957,6 @@ body.dark-mode .section-tag {
         margin-bottom: 20px;
     }
 }
-
-/* =========================================
-   RESPONSIVE: MOBILE 480px
-========================================= */
 
 @media (max-width: 480px) {
     .categories-section {
@@ -2081,8 +2001,6 @@ body.dark-mode .section-tag {
         font-size: 14px;
     }
 }
-
-/* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
     .category-card,
     .category-image img,
@@ -2137,7 +2055,6 @@ body.dark-mode .section-tag {
     font-size: 16px;
     line-height: 1.8;
 }
-/* ================= HOW IT WORKS ================= */
 
 :root {
     --how-primary: #8B5E3C;
@@ -2171,8 +2088,6 @@ body.dark-mode .section-tag {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* CENTER HEADING */
 
 .how-heading {
     max-width: 720px;
@@ -2211,9 +2126,6 @@ body.dark-mode .section-tag {
     font-size: 16px;
     line-height: 1.8;
 }
-
-/* STEP CARDS */
-
 .how-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2239,8 +2151,6 @@ body.dark-mode .section-tag {
     border-color: var(--how-accent);
 }
 
-/* STEP NUMBER */
-
 .how-number {
     position: absolute;
     top: 15px;
@@ -2250,8 +2160,6 @@ body.dark-mode .section-tag {
     font-weight: 800;
     opacity: 0.65;
 }
-
-/* ICON */
 
 .how-icon {
     display: flex;
@@ -2280,8 +2188,6 @@ body.dark-mode .section-tag {
     line-height: 1.8;
 }
 
-/* TABLET */
-
 @media (max-width: 1024px) {
     .how-section {
         padding: 65px 24px;
@@ -2299,8 +2205,6 @@ body.dark-mode .section-tag {
         font-size: 18px;
     }
 }
-
-/* MOBILE & TABLET */
 
 @media (max-width: 768px) {
     .how-section {
@@ -2331,10 +2235,6 @@ body.dark-mode .section-tag {
         margin-bottom: 18px;
     }
 }
-
-
-/* ================= CUSTOMER REVIEWS ================= */
-
 :root {
     --review-primary: #8B5E3C;
     --review-accent: #C87952;
@@ -2368,9 +2268,6 @@ body.dark-mode .section-tag {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* SECTION HEADING */
-
 .reviews-heading {
     max-width: 720px;
     margin: 0 auto 45px;
@@ -2410,15 +2307,11 @@ body.dark-mode .section-tag {
     line-height: 1.8;
 }
 
-/* REVIEW GRID */
-
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
-
-/* REVIEW CARD */
 
 .review-card {
     padding: 30px 25px;
@@ -2437,16 +2330,12 @@ body.dark-mode .section-tag {
     border-color: var(--review-accent);
 }
 
-/* STAR RATINGS */
-
 .review-stars {
     margin-bottom: 20px;
     color: var(--review-star);
     font-size: 22px;
     letter-spacing: 3px;
 }
-
-/* FEEDBACK */
 
 .review-text {
     min-height: 115px;
@@ -2455,8 +2344,6 @@ body.dark-mode .section-tag {
     font-size: 15px;
     line-height: 1.9;
 }
-
-/* CUSTOMER DETAILS */
 
 .review-customer {
     display: flex;
@@ -2492,8 +2379,6 @@ body.dark-mode .section-tag {
     font-size: 13px;
 }
 
-/* TABLET - 1024px */
-
 @media (max-width: 1024px) {
     .reviews-section {
         padding: 65px 24px;
@@ -2504,8 +2389,6 @@ body.dark-mode .section-tag {
         gap: 20px;
     }
 }
-
-/* MOBILE - 768px */
 
 @media (max-width: 768px) {
     .reviews-section {
@@ -2534,7 +2417,6 @@ body.dark-mode .section-tag {
         font-size: 14px;
     }
 }
-/* ================= FAQ SECTION ================= */
 
 :root {
     --faq-primary: #8B5E3C;
@@ -2568,8 +2450,6 @@ body.dark-mode .section-tag {
     max-width: 900px;
     margin: 0 auto;
 }
-
-/* HEADING */
 
 .faq-heading {
     max-width: 720px;
@@ -2609,8 +2489,6 @@ body.dark-mode .section-tag {
     line-height: 1.8;
 }
 
-/* FAQ ITEMS */
-
 .faq-list {
     display: flex;
     flex-direction: column;
@@ -2630,8 +2508,6 @@ body.dark-mode .section-tag {
 .faq-item.active {
     border-color: var(--faq-accent);
 }
-
-/* QUESTION BUTTON */
 
 .faq-question {
     display: flex;
@@ -2659,9 +2535,6 @@ body.dark-mode .section-tag {
 .faq-question:hover {
     color: var(--faq-accent);
 }
-
-/* PLUS / MINUS ICON */
-
 .faq-icon {
     display: flex;
     align-items: center;
@@ -2680,8 +2553,6 @@ body.dark-mode .section-tag {
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
 }
-
-/* ANSWER ANIMATION */
 
 .faq-answer {
     display: grid;
@@ -2705,8 +2576,6 @@ body.dark-mode .section-tag {
     line-height: 1.9;
 }
 
-/* TABLET */
-
 @media (max-width: 1024px) {
     .faq-section {
         padding: 65px 24px;
@@ -2716,8 +2585,6 @@ body.dark-mode .section-tag {
         max-width: 800px;
     }
 }
-
-/* MOBILE */
 
 @media (max-width: 768px) {
     .faq-section {
@@ -2754,8 +2621,6 @@ body.dark-mode .section-tag {
     }
 }
 
-/* REDUCED MOTION ACCESSIBILITY */
-
 @media (prefers-reduced-motion: reduce) {
     .faq-item,
     .faq-icon,
@@ -2763,14 +2628,6 @@ body.dark-mode .section-tag {
         transition: none;
     }
 }
-
-
-/* ==========================================
-   NEWSLETTER / CTA SECTION
-   Earth Brown + Terracotta Theme
-========================================== */
-
-/* ROOT VARIABLES */
 :root {
     --news-primary: #8B5E3C;
     --news-accent: #C87952;
@@ -2786,8 +2643,6 @@ body.dark-mode .section-tag {
 
     --news-shadow: 0 15px 40px rgba(62, 48, 39, 0.12);
 }
-
-/* DARK MODE VARIABLES */
 [data-theme="dark"] {
     --news-bg: #211B17;
     --news-card: #302720;
@@ -2801,24 +2656,12 @@ body.dark-mode .section-tag {
     --news-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
 }
 
-
-/* ==========================================
-   OUTER CTA SECTION
-   No background image here
-========================================== */
-
 .newsletter-section {
     width: 100%;
     padding: 85px 20px;
     background: var(--news-bg);
     transition: background 0.3s ease;
 }
-
-
-/* ==========================================
-   NEWSLETTER CARD
-   Background image only on card
-========================================== */
 
 .newsletter-container {
     position: relative;
@@ -2832,8 +2675,6 @@ body.dark-mode .section-tag {
 
     border: 1px solid var(--news-border);
     border-radius: 24px;
-
-    /* Subtle overlay for readable text */
     background:
         linear-gradient(
             rgba(255, 245, 232, 0.72),
@@ -2853,24 +2694,16 @@ body.dark-mode .section-tag {
         border-color 0.3s ease,
         box-shadow 0.3s ease;
 }
-
-/* Heading */
 .newsletter-container h1,
 .newsletter-container h2 {
     color: #593522;
 }
-
-/* Highlighted heading */
 .newsletter-container .highlight {
     color: #bd572f;
 }
-
-/* Description */
 .newsletter-container p {
     color: #704d39;
 }
-
-/* Responsive */
 @media (max-width: 768px) {
     .newsletter-container {
         padding: 40px 24px;
@@ -2882,9 +2715,6 @@ body.dark-mode .section-tag {
         padding: 30px 16px;
     }
 }
-
-
-/* Dark mode card image overlay */
 [data-theme="dark"] .newsletter-container {
     background:
         linear-gradient(
@@ -2897,20 +2727,12 @@ body.dark-mode .section-tag {
     background-position: center;
     background-repeat: no-repeat;
 }
-
-
-/* Content above background */
 .newsletter-content {
     position: relative;
     z-index: 1;
     max-width: 850px;
     margin: 0 auto;
 }
-
-
-/* ==========================================
-   BADGE
-========================================== */
 
 .newsletter-badge {
     display: inline-block;
@@ -2930,11 +2752,6 @@ body.dark-mode .section-tag {
     text-transform: uppercase;
 }
 
-
-/* ==========================================
-   HEADING
-========================================== */
-
 .newsletter-content h2 {
     margin: 0 0 22px;
 
@@ -2952,11 +2769,6 @@ body.dark-mode .section-tag {
     color: var(--news-accent);
 }
 
-
-/* ==========================================
-   DESCRIPTION
-========================================== */
-
 .newsletter-description {
     max-width: 650px;
     margin: 0 auto 32px;
@@ -2966,11 +2778,6 @@ body.dark-mode .section-tag {
     font-size: 16px;
     line-height: 1.8;
 }
-
-
-/* ==========================================
-   NEWSLETTER FORM
-========================================== */
 
 .newsletter-form {
     display: flex;
@@ -3009,9 +2816,6 @@ body.dark-mode .section-tag {
     flex-shrink: 0;
     font-size: 19px;
 }
-
-
-/* Email Input */
 .newsletter-input-wrapper input {
     width: 100%;
     min-width: 0;
@@ -3031,20 +2835,12 @@ body.dark-mode .section-tag {
     color: var(--news-text);
     opacity: 0.9;
 }
-
-
-/* Remove browser autofill background */
 .newsletter-input-wrapper input:-webkit-autofill,
 .newsletter-input-wrapper input:-webkit-autofill:hover,
 .newsletter-input-wrapper input:-webkit-autofill:focus {
     -webkit-text-fill-color: var(--news-title);
     transition: background-color 9999s ease-in-out 0s;
 }
-
-
-/* ==========================================
-   SUBSCRIBE BUTTON
-========================================== */
 
 .newsletter-btn {
     display: inline-flex;
@@ -3094,11 +2890,6 @@ body.dark-mode .section-tag {
     outline-offset: 4px;
 }
 
-
-/* ==========================================
-   PRIVACY NOTE
-========================================== */
-
 .newsletter-note {
     display: flex;
     align-items: center;
@@ -3117,11 +2908,6 @@ body.dark-mode .section-tag {
     font-size: 16px;
 }
 
-
-/* ==========================================
-   FORM STATUS MESSAGE
-========================================== */
-
 .newsletter-message {
     margin: 12px 0 0;
 
@@ -3129,11 +2915,6 @@ body.dark-mode .section-tag {
     font-size: 14px;
     line-height: 1.6;
 }
-
-
-/* ==========================================
-   TABLET RESPONSIVE - 1024px
-========================================== */
 
 @media (max-width: 1024px) {
     .newsletter-section {
@@ -3154,11 +2935,6 @@ body.dark-mode .section-tag {
         font-size: 15px;
     }
 }
-
-
-/* ==========================================
-   MOBILE RESPONSIVE - 768px
-========================================== */
 
 @media (max-width: 768px) {
     .newsletter-section {
@@ -3224,11 +3000,6 @@ body.dark-mode .section-tag {
     }
 }
 
-
-/* ==========================================
-   SMALL MOBILE - 480px
-========================================== */
-
 @media (max-width: 480px) {
     .newsletter-section {
         padding: 40px 12px;
@@ -3272,11 +3043,6 @@ body.dark-mode .section-tag {
     }
 }
 
-
-/* ==========================================
-   EXTRA SMALL MOBILE - 360px
-========================================== */
-
 @media (max-width: 360px) {
     .newsletter-container {
         padding: 28px 12px;
@@ -3295,11 +3061,6 @@ body.dark-mode .section-tag {
         font-size: 12px;
     }
 }
-
-
-/* ==========================================
-   REDUCED MOTION ACCESSIBILITY
-========================================== */
 
 @media (prefers-reduced-motion: reduce) {
     .newsletter-container,
